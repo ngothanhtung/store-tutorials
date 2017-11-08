@@ -16,14 +16,14 @@ class UserList extends Component {
         'x-access-token': sessionStorage.getItem('token')
       })
     }).then(res => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.success === false) {
+      .then((result) => {
+        console.log(result);
+        if (result.success === false) {
           // token failed
           
         } else {        
           this.setState({ loading: false });
-          this.setState({ Users: data });
+          this.setState({ Users: result.data });
         }
       });
   }

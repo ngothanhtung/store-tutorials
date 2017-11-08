@@ -27,11 +27,11 @@ class LoginForm extends Component {
       })
     }).then(function (response) {
       return response.json()
-    }).then(function (data) {
-      console.log(data);
+    }).then(function (result) {
+      console.log(result);
 
       //save token to sessionStorage
-      sessionStorage.setItem("token", data.token);
+      sessionStorage.setItem("token", result.token);
 
       // get token
       // sessionStorage.getItem("token");
