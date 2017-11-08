@@ -19,7 +19,7 @@ class LoginForm extends Component {
     var data = JSON.stringify(this.state.user);
     console.log(data);
     // url (required), options (optional)
-    fetch('http://localhost:3000/api/authenticate', {
+    fetch('http://localhost:9000/api/authenticate', {
       method: 'POST',
       body: data,
       headers: new Headers({
