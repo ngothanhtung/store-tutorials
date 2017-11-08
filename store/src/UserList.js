@@ -18,8 +18,13 @@ class UserList extends Component {
     }).then(res => res.json())
       .then((data) => {
         console.log(data);
-        this.setState({ loading: false });
-        this.setState({ Users: data });
+        if (data.success === false) {
+          // token failed
+          
+        } else {        
+          this.setState({ loading: false });
+          this.setState({ Users: data });
+        }
       });
   }
   render() {
