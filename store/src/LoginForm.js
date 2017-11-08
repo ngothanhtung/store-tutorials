@@ -29,6 +29,12 @@ class LoginForm extends Component {
       return response.json()
     }).then(function (data) {
       console.log(data);
+
+      //save token to sessionStorage
+      sessionStorage.setItem("token", data.token);
+
+      // get token
+      // sessionStorage.getItem("token");
     }).catch(function (err) {
       // Error :(
       console.log(err);
@@ -46,6 +52,7 @@ class LoginForm extends Component {
     return (
       <div className="App">
         <h1>Login</h1>
+        <hr />
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label>Username:</label>
@@ -53,9 +60,8 @@ class LoginForm extends Component {
           </div>
           <div className="form-group">
             <label>Password:</label>
-            <input type="text" className="input form-control" value={this.state.user.password} onChange={this.handleChange.bind(this, 'password')} />
+            <input type="password" className="input form-control" value={this.state.user.password} onChange={this.handleChange.bind(this, 'password')} />
           </div>
-
           <div>
             <input className="btn btn-primary" type="submit" value="Submit" />
           </div>
