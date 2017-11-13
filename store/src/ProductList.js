@@ -43,6 +43,8 @@ class ProductList extends Component {
                     <img alt="" style={{ width: "100%" }} src={x.image.coverImageUrl} />
                     <h3>{x.name}</h3>
                     <strong>{x.price.price}</strong>
+                    <br />
+                    <i>{x.promotion.discount}</i> %
                   </div>
                 </div>
               )
