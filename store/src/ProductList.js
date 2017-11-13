@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
-class UserList extends Component {
+class ProductList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Users: [],
+      Products: [],
       loading: true
     };
   }
   componentDidMount() {
-    fetch('http://localhost:9000/api/users', {
+    fetch('http://localhost:9000/api/products', {
       method: 'GET',
       headers: new Headers({
         'Content-Type': 'application/json',
@@ -20,10 +20,10 @@ class UserList extends Component {
         console.log(result);
         if (result.success === false) {
           // token failed
-          
-        } else {        
+
+        } else {
           this.setState({ loading: false });
-          this.setState({ Users: result.data });
+          this.setState({ Products: result.data });
         }
       });
   }
@@ -32,17 +32,23 @@ class UserList extends Component {
       return (
         <div>
           <h2>
-            User List
-        </h2>
-          <ul>
+            Product List
+          </h2>
+          <div className="row">
+
             {
-              this.state.Users.map((x) =>
-                <li key={x._id}>
-                  {x.username}
-                </li>
+              this.state.Products.map((x) =>
+                <div style={{ textAlign: "center", marginBottom: "40px" }} className="col-md-4" key={x._id}>
+                  <div className="img-thumbnail" style={{ padding: "8px"}}>
+                    <img alt="" style={{ width: "100%" }} src={x.image.coverImageUrl} />
+                    <h3>{x.name}</h3>
+                    <strong>{x.price.price}</strong>
+                  </div>
+                </div>
               )
             }
-          </ul>
+
+          </div>
         </div>
       );
     } else {
@@ -51,4 +57,4 @@ class UserList extends Component {
   }
 }
 
-export default UserList;
+export default ProductList;
