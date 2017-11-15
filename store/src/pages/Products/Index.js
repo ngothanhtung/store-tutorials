@@ -7,18 +7,16 @@ class Products extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            ShoppingCartItems: null,
-            Products: null,
+            ShoppingCartItems: [],
+            Products: [],
             open: false,
             loading: true
         };
     }
 
     componentDidMount() {
-        this.state.ShoppingCartItems = JSON.parse(localStorage.getItem('shopping-cart') || '[]');
-
-        // get json data from remote api
-        //fetch('https://slacklivechat.com/jsonplaceholder/products')
+        this.setState({ShoppingCartItems: JSON.parse(localStorage.getItem('shopping-cart') || '[]')});        
+        // get json data from remote api        
         fetch('http://localhost:9000/api/products', {
             method: 'GET',
             headers: new Headers({
@@ -27,10 +25,12 @@ class Products extends Component {
             })
         })
             .then(res => res.json())
-            .then((result) => {
-                this.state.Products = result.data;
-                this.setState({ loading: false });
-                this.setState(this.state);
+            .then((result) => {            
+                console.log(result);    
+                if (result.success === true) {                                       
+                    this.setState({ loading: false });                    
+                    this.setState({ Products: result.data });                                         
+                }                
             });
     }
 
