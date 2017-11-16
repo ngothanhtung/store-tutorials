@@ -26,15 +26,13 @@ class ProductItem extends Component {
 
                     <Card.Description>
                         <ButtonAddToCart product={this.props.product}/>
-                        <Button color='orange' animated='vertical'>
-                            <Button.Content visible>
-                                <Icon name='browser'/> Detail
-                            </Button.Content>
-                            <Button.Content hidden>
-                                <Menu.Item as={Link} style={styles.link} to={"/product/" + this.props.product._id} name="home">
-                                     View detail
+                        <Button color='blue'>
+                            <Button.Content positive>
+                                <Menu.Item as={Link} style={styles.link} to={"/product/" + this.props.product._id}>
+                                    View detail
                                 </Menu.Item>
                             </Button.Content>
+
                         </Button>
                     </Card.Description>
                 </Card.Content>

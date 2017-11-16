@@ -48,9 +48,10 @@ class ProductDetail extends Component {
                                 <Header as="h2">Price: {product.price.price}</Header>
                                 <Header as="h4">Discount: {product.promotion.discount} %</Header>
                                 <Rating icon='star' defaultRating={5} maxRating={5}/>
-                                <Header as="h4">
+
+                                <div style={{marginTop: '20px'}}>
                                     <ButtonAddToCart product={product}/>
-                                </Header>
+                                </div>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>
