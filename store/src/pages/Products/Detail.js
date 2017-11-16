@@ -17,13 +17,19 @@ class ProductDetail extends Component {
 
         this.state.ShoppingCartItems = JSON.parse(localStorage.getItem('shopping-cart') || '[]');
 
-        fetch('http://localhost:3000/product/' + this.props.id)
+        fetch('http://localhost:9000/api/product/' + this.props.id, {
+            method: 'GET',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'x-access-token': sessionStorage.getItem('token')
+            })
+        })
             .then(res => res.json())
-            .then((data) => {
-                let product = data;
-                this.state.Product = product;
-                this.setState({loading: false});
-                this.setState(this.state);
+            .then((result) => {
+                if (result.success) {
+                    this.setState({Product: result.data});
+                    this.setState({loading: false});
+                }
             });
     }
 
@@ -35,12 +41,12 @@ class ProductDetail extends Component {
                     <Grid container stackable verticalAlign='middle'>
                         <Grid.Row>
                             <Grid.Column width={4}>
-                                <Image src={product.imageUrl}/>
+                                <Image src={product.image.coverImageUrl}/>
                             </Grid.Column>
                             <Grid.Column width={12}>
                                 <Header as="h1">{product.name}</Header>
-                                <Header as="h2">Price: {product.price}</Header>
-                                <Header as="h4">Discount: {product.discount}</Header>
+                                <Header as="h2">Price: {product.price.price}</Header>
+                                <Header as="h4">Discount: {product.promotion.discount} %</Header>
                                 <Rating icon='star' defaultRating={5} maxRating={5}/>
                                 <Header as="h4">
                                     <ButtonAddToCart product={product}/>

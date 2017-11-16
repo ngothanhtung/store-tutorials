@@ -1,16 +1,43 @@
 import React, {Component} from 'react';
-import {Button, Icon} from "semantic-ui-react";
+import {Button, Icon, Confirm} from "semantic-ui-react";
+
+import createHistory from 'history/createBrowserHistory';
+const history = createHistory({
+    forceRefresh: true
+});
 
 class ButtonAddToCart extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { open: false }
+    }
+
+    show = () => this.setState({ open: true });
+    handleConfirm = () => {
+        this.setState({ open: false });
+
+        history.push('/checkout');
+        history.go(-1);
+        //history.goBack();
+
+    }
+
+    handleCancel = () => {
+        this.setState({ open: false });
+    }
+
     onAddToCart = (product) => {
         const shoppingCartItems = JSON.parse(localStorage.getItem('shopping-cart') || '[]');
 
         const cartItem = {
-            id: product.id,
+            id: product._id,
             name: product.name,
-            price: product.price,
+            price: product.price.price,
+            discount: product.promotion.discount,
             quantity: 1
         };
+
+        this.show();
 
         let isExist = false;
         for (let i = 0; i < shoppingCartItems.length; i++) {
@@ -29,12 +56,23 @@ class ButtonAddToCart extends Component {
 
     render() {
         return(
-            <Button color='green' animated='vertical' onClick={this.onAddToCart.bind(this, this.props.product)}>
-                <Button.Content hidden>Add to cart</Button.Content>
-                <Button.Content visible>
-                    <Icon name='shop'/> Shop
-                </Button.Content>
-            </Button>
+            <span>
+                <Button color='green' animated='vertical' onClick={this.onAddToCart.bind(this, this.props.product)}>
+                    <Button.Content hidden>Add to cart</Button.Content>
+                    <Button.Content visible>
+                        <Icon name='shop'/> Shop
+                    </Button.Content>
+                </Button>
+                <Confirm
+                    confirmButton='Check out'
+                    cancelButton='Continue'
+                    header='Shopping Cart'
+                    content='Added to cart'
+                    open={this.state.open}
+                    onCancel={this.handleCancel}
+                    onConfirm={this.handleConfirm}
+                />
+            </span>
         );
     }
 }

@@ -7,7 +7,7 @@ import {
 
 import createHistory from 'history/createBrowserHistory';
 const history = createHistory({
-	forceRefresh: false
+	forceRefresh: true
 });
 
 class Login extends Component {
@@ -46,7 +46,7 @@ class Login extends Component {
 				// https://github.com/ReactTraining/history
 				history.push('/');
 				history.go(-1);
-				history.goBack();
+				//history.goBack();
 
 			} else {
 				sessionStorage.removeItem("token");
@@ -61,10 +61,12 @@ class Login extends Component {
 
 	render() {
 		return (
-			<Segment style={{ padding: '8em 0em' }} vertical>
+			<Segment style={{ padding: '2em 0em' }} vertical>
 				<Grid container stackable verticalAlign='middle'>
 					<Grid.Row>
-						<Grid.Column width={8}>
+						<Grid.Column width={5}></Grid.Column>
+						<Grid.Column width={6}>
+							<h2>Login</h2>
 							<Form onSubmit={this.handleSubmit}>
 								<Form.Field>
 									<label>UserName</label>
@@ -80,6 +82,7 @@ class Login extends Component {
 								<Button type='submit'>Login</Button>
 							</Form>
 						</Grid.Column>
+						<Grid.Column width={5}></Grid.Column>
 					</Grid.Row>
 				</Grid>
 			</Segment>

@@ -2,6 +2,12 @@ import React, {Component} from 'react';
 import { Header, Segment, Grid, Modal, Popup, Button, Image } from 'semantic-ui-react';
 import ShoppingCart from "./ShoppingCart";
 
+import createHistory from 'history/createBrowserHistory';
+const history = createHistory({
+    forceRefresh: true
+});
+
+
 class ShoppingCartModal extends Component {
     constructor (props){
         super(props);
@@ -27,7 +33,10 @@ class ShoppingCartModal extends Component {
                         </Modal.Description>
                     </Modal.Content>
                     <Modal.Actions>
-                        <Button positive icon='checkmark' labelPosition='right' content="Checkout" />
+                        <Button onClick={() => {
+                            history.push('/checkout');
+                            history.go(-1);}
+                        } positive icon='checkmark' labelPosition='right' content="Checkout" />
                     </Modal.Actions>
                 </Modal>
             </span>

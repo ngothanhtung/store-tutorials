@@ -11,6 +11,7 @@ import Home from './pages/Home/index';
 import About from './pages/About/index';
 import Login from './pages/Login/index';
 import Products from './pages/Products/Index';
+import CheckOut from './pages/CheckOut/index';
 import ProductDetail from './pages/Products/Detail';
 import './App.css';
 
@@ -24,7 +25,9 @@ class App extends Component {
                     <Route path="/products" component={Products}/>
                     <Route path="/product/:id" component={ProductDetailRoute}/>
                     <Route path="/login" component={LoginRoute}/>
+
                     <Route path="/about" component={About}/>
+                    <Route path="/checkout" component={CheckOut}/>
                     <Footer/>
                 </div>
 

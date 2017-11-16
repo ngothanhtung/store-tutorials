@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Table, Button, Header} from 'semantic-ui-react';
+import {Table, Button, Input, Icon, Header} from 'semantic-ui-react';
 
 class ShoppingCart extends Component {
     constructor(props) {
@@ -10,8 +10,7 @@ class ShoppingCart extends Component {
     }
 
     componentDidMount() {
-        this.state.ShoppingCartItems = JSON.parse(localStorage.getItem('shopping-cart') || '[]');
-        this.setState(this.state);
+        this.setState({ShoppingCartItems: JSON.parse(localStorage.getItem('shopping-cart') || '[]')});
     }
 
     onRemoveCart(item) {
@@ -74,7 +73,7 @@ class ShoppingCart extends Component {
                 <Table celled>
                     <Table.Header>
                         <Table.Row>
-                            <Table.HeaderCell>ID</Table.HeaderCell>
+                            <Table.HeaderCell>No.</Table.HeaderCell>
                             <Table.HeaderCell>Name</Table.HeaderCell>
                             <Table.HeaderCell>Price</Table.HeaderCell>
                             <Table.HeaderCell>Quantity</Table.HeaderCell>
@@ -88,17 +87,21 @@ class ShoppingCart extends Component {
                         {
                             this.state.ShoppingCartItems.map((item, index) =>
                                 <Table.Row key={item.id}>
-                                    <Table.Cell textAlign="right">{index + 1}</Table.Cell>
-                                    <Table.Cell textAlign="left">{item.name}</Table.Cell>
-                                    <Table.Cell textAlign="right">{this.formatCurrency(item.price)}</Table.Cell>
-                                    <Table.Cell textAlign="right">
-                                        <Button onClick={this.onDecreaseQuantity.bind(this, item)} className="btn btn-xs btn-warning">-</Button>
-                                        &nbsp;{item.quantity}&nbsp;
-                                        <Button onClick={this.onIncreaseQuantity.bind(this, item)} className="btn btn-xs btn-warning">+</Button>
+                                    <Table.Cell width='1' singleLine={true} textAlign="right">{index + 1}</Table.Cell>
+                                    <Table.Cell singleLine={true}  textAlign="left">{item.name}</Table.Cell>
+                                    <Table.Cell width='1' singleLine={true} textAlign="right">{this.formatCurrency(item.price)}</Table.Cell>
+                                    <Table.Cell width='1' singleLine={true} textAlign="right">
+                                        <Button icon onClick={this.onDecreaseQuantity.bind(this, item)} compact={true}>
+                                            <Icon name='minus'/>
+                                        </Button>
+                                        <Input style={{width: '60px', marginRight: '4px', textAlign: 'center' }} type='text' value={item.quantity} />
+                                        <Button color='blue' icon onClick={this.onIncreaseQuantity.bind(this, item)} compact={true}>
+                                            <Icon name='plus'/>
+                                        </Button>
                                     </Table.Cell>
-                                    <Table.Cell textAlign="right">{this.formatCurrency(item.price * item.quantity)}</Table.Cell>
-                                    <Table.Cell textAlign="right">
-                                        <Button onClick={this.onRemoveCart.bind(this, item)} className="btn btn-xs btn-danger">Remove</Button>
+                                    <Table.Cell width='1' singleLine={true} textAlign="right">{this.formatCurrency(item.price * item.quantity)}</Table.Cell>
+                                    <Table.Cell width='1' singleLine={true} textAlign="right">
+                                        <Button onClick={this.onRemoveCart.bind(this, item)} compact={true} color='red'>Remove</Button>
                                     </Table.Cell>
                                 </Table.Row>
                             )
