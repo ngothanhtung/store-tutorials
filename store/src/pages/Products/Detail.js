@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Card, Icon, Image, Segment, Grid, Header, Rating} from 'semantic-ui-react'
+import {Container, Divider, Card, Icon, Image, Segment, Grid, Header, Rating} from 'semantic-ui-react'
 import ButtonAddToCart from "./Components/ButtonAddToCart";
+import ProductDescription from "./Components/ProductDescription";
 import Loading from "../../Components/Loading";
 
 class ProductDetail extends Component {
@@ -54,6 +55,14 @@ class ProductDetail extends Component {
                                 </div>
                             </Grid.Column>
                         </Grid.Row>
+                        <Grid.Row>
+                            <Container>
+                                <Divider />
+                                <ProductDescription />
+                            </Container>
+                        </Grid.Row>
+
+
                     </Grid>
 
                 </Segment>
