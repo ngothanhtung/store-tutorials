@@ -4,10 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import QueueAnim from 'rc-queue-anim';
 
-import createHistory from 'history/createBrowserHistory';
-const history = createHistory({
-	forceRefresh: true
-});
+import { hashHistory } from 'react-router';
 
 class Login extends React.Component {
   constructor(props) {
@@ -52,10 +49,7 @@ class Login extends React.Component {
         //save token to sessionStorage        
         sessionStorage.setItem("token", result.token);
 
-        // Use push, replace, and go to navigate around.
-        // https://github.com/ReactTraining/history
-        history.push('/#/app/dashboard');
-        history.go(-1);        
+        hashHistory.push('/');
 
       } else {
         sessionStorage.removeItem("token");

@@ -13,6 +13,8 @@ const store = createStore(
 );
 
 const history = syncHistoryWithStore(hashHistory, store);
+// tungnt edited
+//const history = syncHistoryWithStore(browserHistory, store);
 
 function scrollToTop() {
   window.scrollTo(0, 0);
