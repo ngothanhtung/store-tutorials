@@ -28,11 +28,10 @@ class Login extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { username, password } = this.state.dataViewModel;
-    console.log({ username, password });
-    //this.setState({ submittedName: username, submittedEmail: password })
 
     var data = JSON.stringify(this.state.dataViewModel);
-    console.log(data);
+    
+    var component = this;
     // url (required), options (optional)
     fetch('http://localhost:9000/api/authenticate', {
       method: 'POST',
@@ -44,11 +43,14 @@ class Login extends React.Component {
       return response.json()
     }).then(function (result) {
       console.log(result);
-      if (result.success === true) {
-        console.log("Login OK");
+      if (result.success === true) {        
         //save token to sessionStorage        
         sessionStorage.setItem("token", result.token);
 
+        // save logged in user to sessionStorage
+        sessionStorage.setItem("current-user", component.state.dataViewModel.username);
+
+        // redirect to home
         hashHistory.push('/');
 
       } else {

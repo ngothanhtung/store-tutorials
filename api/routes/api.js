@@ -13,6 +13,27 @@ router.post('/authenticate', function (req, res) {
     authenticate.login(req, res);
 });
 
+router.post('/register', function (req, res) {
+    var data = req.body;
+    // if (validator.isEmail(data.email) === false) {
+    //     res.json({
+    //         success: false,
+    //         message: "Validate failed: Email",
+    //         token: "",
+    //         data: null
+    //     });
+    // }
+    db.insertDocument(data, "users", function (result) {
+        res.json({
+            success: true,
+            message: "OK",
+            token: "",
+            data: result
+        });
+    })
+});
+
+
 // ---------------------------------------------------------
 // route middleware to authenticate and check token
 // ---------------------------------------------------------
