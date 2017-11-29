@@ -2,5 +2,6 @@
 .gitignore
 .idea/
 .DS_Store
+desktop.ini
 admin/node_modules/
 store/node_modules/

@@ -4,12 +4,66 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import QueueAnim from 'rc-queue-anim';
 
+import createHistory from 'history/createBrowserHistory';
+const history = createHistory({
+	forceRefresh: true
+});
+
 class Login extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      brand: APPCONFIG.brand
+      brand: APPCONFIG.brand,
+      dataViewModel: {
+        username: '',
+        password: ''
+      }
     };
+  }
+
+  // BINDING
+	handleChange(field, event) {
+		var object = this.state.dataViewModel;
+		object[field] = event.target.value;
+		this.setState({ dataViewModel: object });
+	}
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const { username, password } = this.state.dataViewModel;
+    console.log({ username, password });
+    //this.setState({ submittedName: username, submittedEmail: password })
+
+    var data = JSON.stringify(this.state.dataViewModel);
+    console.log(data);
+    // url (required), options (optional)
+    fetch('http://localhost:9000/api/authenticate', {
+      method: 'POST',
+      body: data,
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      })
+    }).then(function (response) {
+      return response.json()
+    }).then(function (result) {
+      console.log(result);
+      if (result.success === true) {
+        console.log("Login OK");
+        //save token to sessionStorage        
+        sessionStorage.setItem("token", result.token);
+
+        // Use push, replace, and go to navigate around.
+        // https://github.com/ReactTraining/history
+        history.push('/#/app/dashboard');
+        history.go(-1);        
+
+      } else {
+        sessionStorage.removeItem("token");
+      }
+
+    }).catch(function (err) {
+      console.log(err);
+    });
   }
 
   render() {
@@ -22,29 +76,32 @@ class Login extends React.Component {
               <h1><a href="#/">{this.state.brand}</a></h1>
             </section>
 
-            <form className="form-horizontal">
+            <form onSubmit={this.handleSubmit} className="form-horizontal">
               <fieldset>
                 <div className="form-group">
                   <TextField
-                    floatingLabelText="Email"
+                    name="username"
+                    floatingLabelText="Username"
                     fullWidth
+                    value={this.state.dataViewModel.username} onChange={this.handleChange.bind(this, 'username')}
                   />
                 </div>
                 <div className="form-group">
                   <TextField
+                    name="password"
                     floatingLabelText="Password"
                     type="password"
                     fullWidth
-                    />
+                    value={this.state.dataViewModel.password} onChange={this.handleChange.bind(this, 'password')}
+                  />
                 </div>
               </fieldset>
+              <div className="card-action no-border text-right">                
+                <RaisedButton type="submit" label="Login" primary />
+              </div>
             </form>
           </div>
-          <div className="card-action no-border text-right">
-            <a href="#/" className="color-primary">Login</a>
-          </div>
         </div>
-
         <div className="additional-info">
           <a href="#/sign-up">Sign up</a>
           <span className="divider-h" />
