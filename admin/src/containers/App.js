@@ -55,7 +55,7 @@ class App extends Component {
               'sidebar-lg': sidebarWidth === 'large'})
                     }>
             {this.props.children}
-          </div>
+          </div>          
         </div>
       </MuiThemeProvider>
     );

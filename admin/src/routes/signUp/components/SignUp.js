@@ -6,6 +6,11 @@ import QueueAnim from 'rc-queue-anim';
 
 import { hashHistory } from 'react-router';
 
+import ReactMaterialUiNotifications from 'react-materialui-notifications';
+import Message from 'material-ui/svg-icons/communication/message';
+import {deepOrange500} from 'material-ui/styles/colors';
+import moment from 'moment';
+
 class SignUp extends React.Component {
   constructor(props) {
     super(props);
@@ -19,8 +24,21 @@ class SignUp extends React.Component {
     };
   }
 
+  displayNotification = (title, message) => {
+    console.log("OK")
+    ReactMaterialUiNotifications.showNotification({
+      desktop: true,
+      title: title,
+      additionalText: message,
+      icon: <Message />,
+      iconBadgeColor: deepOrange500,
+      overflowText: "joe@gmail.com",
+      timestamp: moment().format('h:mm A')
+    })
+  }
+
   // BINDING
-  handleChange(field, event) {
+  handleChange = (field, event) => {
     var object = this.state.dataViewModel;
     object[field] = event.target.value;
     this.setState({ dataViewModel: object });
@@ -29,6 +47,9 @@ class SignUp extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    
+    this.displayNotification('title', 'message');
+    return;
     //const { username, password, email } = this.state.dataViewModel;
 
     var data = JSON.stringify(this.state.dataViewModel);
@@ -53,7 +74,8 @@ class SignUp extends React.Component {
         //sessionStorage.setItem("current-user", component.state.dataViewModel.username);
 
         // redirect to home
-        hashHistory.push('/login');
+        component.displayNotification('title', 'message');
+        //hashHistory.push('/login');
 
       } else {
         //sessionStorage.removeItem("token");
@@ -63,6 +85,8 @@ class SignUp extends React.Component {
       console.log(err);
     });
   }
+
+  
 
 
   render() {
@@ -112,7 +136,7 @@ class SignUp extends React.Component {
               </div>
             </form>
           </div>
-         
+
         </div>
 
       </div>
@@ -126,8 +150,20 @@ const Page = () => (
       <QueueAnim type="bottom" className="ui-animate">
         <div key="1">
           <SignUp />
+          
         </div>
-      </QueueAnim>
+      </QueueAnim>     
+      <ReactMaterialUiNotifications
+            desktop={true}
+            transitionName={{
+              leave: 'dummy',
+              leaveActive: 'fadeOut',
+              appear: 'dummy',
+              appearActive: 'zoomInUp'
+            }}
+            transitionAppear={true}
+            transitionLeave={true}
+          /> 
     </div>
   </div>
 );
