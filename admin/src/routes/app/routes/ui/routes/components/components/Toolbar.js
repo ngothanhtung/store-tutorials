@@ -43,8 +43,8 @@ class ToolbarExamplesSimple extends React.Component {
               <IconButton touch>
                 <NavigationExpandMoreIcon />
               </IconButton>
-                        }
-                    >
+            }
+          >
             <MenuItem primaryText="Download" />
             <MenuItem primaryText="More Info" />
           </IconMenu>
@@ -63,7 +63,7 @@ const ToolbarSection = () => (
       </div>
     </div>
   </article>
-    );
+);
 
 
 module.exports = ToolbarSection;

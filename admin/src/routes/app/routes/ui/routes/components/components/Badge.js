@@ -31,6 +31,6 @@ const BadgeSection = () => (
       </div>
     </div>
   </article>
-    );
+);
 
 module.exports = BadgeSection;

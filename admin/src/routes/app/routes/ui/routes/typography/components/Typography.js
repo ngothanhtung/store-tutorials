@@ -210,7 +210,7 @@ const Typography = () => (
                                     795 Folsom Ave, Suite 600<br />
                                     San Francisco, CA 94107<br />
                 <abbr title="Phone">P:</abbr> (123) 456-7890
-                                </address>
+              </address>
 
             </div>
           </div>
@@ -369,12 +369,12 @@ const Typography = () => (
                 <li>Integer molestie lorem at massa</li>
                 <li>Facilisis in pretium nisl aliquet</li>
                 <li>Nulla volutpat aliquam velit
-                    <ul>
-                      <li>Phasellus iaculis neque</li>
-                      <li>Purus sodales ultricies</li>
-                      <li>Vestibulum laoreet porttitor sem</li>
-                      <li>Ac tristique libero volutpat at</li>
-                    </ul>
+                  <ul>
+                    <li>Phasellus iaculis neque</li>
+                    <li>Purus sodales ultricies</li>
+                    <li>Vestibulum laoreet porttitor sem</li>
+                    <li>Ac tristique libero volutpat at</li>
+                  </ul>
                 </li>
                 <li>Faucibus porta lacus fringilla vel</li>
                 <li>Aenean sit amet erat nunc</li>

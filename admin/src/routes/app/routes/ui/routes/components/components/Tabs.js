@@ -30,7 +30,7 @@ const TabsExampleSimple = () => (
       label="onActive"
       data-route="/home"
       onActive={handleActive}
-        >
+    >
       <div style={styles}>
         <h2>Tab Three</h2>
         <p> This is a third example tab. </p>

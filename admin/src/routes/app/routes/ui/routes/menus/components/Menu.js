@@ -108,8 +108,8 @@ const MenuExampleIcons = () => (
             primaryText="Workspace"
             rightIcon={
               <FontIcon className="material-icons" style={{color: '#559'}}>settings</FontIcon>
-                        }
-                    />
+            }
+          />
           <MenuItem primaryText="Paragraph" rightIcon={<b style={iconsStyle.rightIcon}>¶</b>} />
           <MenuItem primaryText="Section" rightIcon={<b style={iconsStyle.rightIcon}>§</b>} />
         </Menu>

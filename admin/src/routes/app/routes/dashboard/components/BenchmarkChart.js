@@ -21,7 +21,7 @@ radar.options = {
       axisLine: {
         show: true,
         lineStyle: {
-                    // for both indicator and axisLine, bad, better seperate them
+          // for both indicator and axisLine, bad, better seperate them
           color: '#b1b1b1'
         }
       },

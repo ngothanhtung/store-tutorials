@@ -56,7 +56,7 @@ class SliderExampleControlled extends React.Component {
             defaultValue={50}
             value={this.state.secondSlider}
             onChange={this.handleSecondSlider}
-                    />
+          />
           <div className="callout callout-info no-margin-bottom">
             <p>
               <span>{'The value of this slider is: '}</span>

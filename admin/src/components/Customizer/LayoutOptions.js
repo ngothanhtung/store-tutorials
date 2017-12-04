@@ -69,7 +69,7 @@ class LayoutOptions extends React.Component {
               value={sidebarWidth}
               onChange={this.onSidebarWidthChange}
               style={sideWidthSelectStyle}
-                        >
+            >
               <MenuItem value={'small'} primaryText="Small size" />
               <MenuItem value={'middle'} primaryText="Middle size" />
               <MenuItem value={'large'} primaryText="Large size" />
@@ -108,6 +108,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 module.exports = connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(LayoutOptions);

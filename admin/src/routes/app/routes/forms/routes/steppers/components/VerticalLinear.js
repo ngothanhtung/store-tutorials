@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-    Step,
-    Stepper,
-    StepLabel,
-    StepContent,
+  Step,
+  Stepper,
+  StepLabel,
+  StepContent,
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
@@ -42,16 +42,16 @@ class VerticalLinearStepper extends React.Component {
           primary
           onTouchTap={this.handleNext}
           style={{marginRight: 12}}
-                />
+        />
         {step > 0 && (
-        <FlatButton
-          label="Back"
-          disabled={stepIndex === 0}
-          disableTouchRipple
-          disableFocusRipple
-          onTouchTap={this.handlePrev}
-                    />
-                )}
+          <FlatButton
+            label="Back"
+            disabled={stepIndex === 0}
+            disableTouchRipple
+            disableFocusRipple
+            onTouchTap={this.handlePrev}
+          />
+        )}
       </div>
     );
   }
@@ -106,9 +106,9 @@ class VerticalLinearStepper extends React.Component {
                       event.preventDefault();
                       this.setState({stepIndex: 0, finished: false});
                     }}
-                    >
+                  >
                       Click here
-                    </a> to reset the example.
+                  </a> to reset the example.
                 </p>
               )}
             </div>

@@ -62,6 +62,6 @@ const PaperSection = () => (
       </div>
     </section>
   </article>
-    );
+);
 
 module.exports = PaperSection;

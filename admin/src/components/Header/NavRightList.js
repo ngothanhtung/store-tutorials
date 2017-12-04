@@ -29,36 +29,36 @@ class NavRightList extends React.Component {
             anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
             targetOrigin={{horizontal: 'right', vertical: 'top'}}
             menuStyle={{minWidth: '150px'}}
-                    >
+          >
 
             <MenuItem
               value="/app/user"
-              primaryText={ sessionStorage.getItem("current-user") }
+              primaryText={sessionStorage.getItem('current-user')}
               style={{fontSize: '14px', lineHeight: '48px'}}
               innerDivStyle={listItemStyle}
               leftIcon={<i className="material-icons">person</i>}
-                        />
+            />
             <MenuItem
               value="/app/dashboard"
               primaryText="Dashboard"
               style={{fontSize: '14px', lineHeight: '48px'}}
               innerDivStyle={listItemStyle}
               leftIcon={<i className="material-icons">home</i>}
-                        />
+            />
             <MenuItem
               value="/app/page/about"
               primaryText="About"
               innerDivStyle={listItemStyle}
               style={{fontSize: '14px', lineHeight: '48px'}}
               leftIcon={<i className="material-icons">person_outline</i>}
-                        />
+            />
             <MenuItem
               value="/login"
               primaryText="Log Out"
               innerDivStyle={listItemStyle}
               style={{fontSize: '14px', lineHeight: '48px'}}
               leftIcon={<i className="material-icons">forward</i>}
-                        />
+            />
           </IconMenu>
         </li>
       </ul>

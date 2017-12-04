@@ -127,12 +127,12 @@ class TableExampleComplex extends React.Component {
               fixedFooter={this.state.fixedFooter}
               selectable={this.state.selectable}
               multiSelectable={this.state.multiSelectable}
-                        >
+            >
               <TableHeader
                 displaySelectAll={this.state.showCheckboxes}
                 adjustForCheckbox={this.state.showCheckboxes}
                 enableSelectAll={this.state.enableSelectAll}
-                            >
+              >
                 <TableRow>
                   <TableHeaderColumn colSpan="3" tooltip="Super Header" style={{textAlign: 'center'}}>
                     Super Header
@@ -149,7 +149,7 @@ class TableExampleComplex extends React.Component {
                 deselectOnClickaway={this.state.deselectOnClickaway}
                 showRowHover={this.state.showRowHover}
                 stripedRows={this.state.stripedRows}
-                            >
+              >
                 {tableData.map((row, index) => (
                   <TableRow key={index} selected={row.selected}>
                     <TableRowColumn>{index}</TableRowColumn>
@@ -160,7 +160,7 @@ class TableExampleComplex extends React.Component {
               </TableBody>
               <TableFooter
                 adjustForCheckbox={this.state.showCheckboxes}
-                            >
+              >
                 <TableRow>
                   <TableRowColumn>ID</TableRowColumn>
                   <TableRowColumn>Name</TableRowColumn>

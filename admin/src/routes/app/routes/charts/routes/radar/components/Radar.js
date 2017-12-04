@@ -31,7 +31,7 @@ radar1.options = {
       axisLine: {
         show: true,
         lineStyle: {
-                    // for both indicator and axisLine, bad, better seperate them
+          // for both indicator and axisLine, bad, better seperate them
           color: '#b1b1b1'
         }
       },
@@ -95,7 +95,7 @@ radar2.options = {
       axisLine: {
         show: true,
         lineStyle: {
-                    // for both indicator and axisLine, bad, better seperate them
+          // for both indicator and axisLine, bad, better seperate them
           color: '#b1b1b1'
         }
       },
@@ -146,9 +146,9 @@ radar2.options = {
   ]
 };
 radar3.options = {
-        // title: {
-        //     text: 'Mutiple Radar'
-        // },
+  // title: {
+  //     text: 'Mutiple Radar'
+  // },
   tooltip: {
     trigger: 'axis'
   },
@@ -164,7 +164,7 @@ radar3.options = {
       axisLine: {
         show: true,
         lineStyle: {
-                        // for both indicator and axisLine, bad, better seperate them
+          // for both indicator and axisLine, bad, better seperate them
           color: '#b1b1b1'
         }
       },
@@ -180,10 +180,10 @@ radar3.options = {
         }
       },
       indicator: [
-                    {text: 'Brand', max: 100},
-                    {text: 'Content', max: 100},
-                    {text: 'Usability', max: 100},
-                    {text: 'Features', max: 100}
+        {text: 'Brand', max: 100},
+        {text: 'Content', max: 100},
+        {text: 'Usability', max: 100},
+        {text: 'Features', max: 100}
       ],
       center: ['25%', '40%'],
       radius: 80
@@ -192,7 +192,7 @@ radar3.options = {
       axisLine: {
         show: true,
         lineStyle: {
-                        // for both indicator and axisLine, bad, better seperate them
+          // for both indicator and axisLine, bad, better seperate them
           color: '#b1b1b1'
         }
       },
@@ -221,7 +221,7 @@ radar3.options = {
       axisLine: {
         show: true,
         lineStyle: {
-                        // for both indicator and axisLine, bad, better seperate them
+          // for both indicator and axisLine, bad, better seperate them
           color: '#b1b1b1'
         }
       },

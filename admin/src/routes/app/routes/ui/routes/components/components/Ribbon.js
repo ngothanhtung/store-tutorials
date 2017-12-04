@@ -10,7 +10,7 @@ const RibbonSection = () => (
           <div className="ui-ribbon-wrapper">
             <div className="ui-ribbon">
                                 30% Off
-                            </div>
+            </div>
           </div>
           <div className="box-header">Ribbon</div>
           <div className="box-body">
@@ -23,7 +23,7 @@ const RibbonSection = () => (
           <div className="ui-ribbon-wrapper">
             <div className="ui-ribbon">
                                 30% Off
-                            </div>
+            </div>
           </div>
           <div className="box-header">Ribbon-primary</div>
           <div className="box-body">
@@ -36,7 +36,7 @@ const RibbonSection = () => (
           <div className="ui-ribbon-wrapper">
             <div className="ui-ribbon">
                                 30% Off
-                            </div>
+            </div>
           </div>
           <div className="box-header">Ribbon-success</div>
           <div className="box-body">
@@ -52,7 +52,7 @@ const RibbonSection = () => (
           <div className="ui-ribbon-wrapper">
             <div className="ui-ribbon">
                                 30% Off
-                            </div>
+            </div>
           </div>
           <div className="box-header">Ribbon-info</div>
           <div className="box-body">
@@ -65,7 +65,7 @@ const RibbonSection = () => (
           <div className="ui-ribbon-wrapper">
             <div className="ui-ribbon">
                                 30% Off
-                            </div>
+            </div>
           </div>
           <div className="box-header">Ribbon-warning</div>
           <div className="box-body">
@@ -78,7 +78,7 @@ const RibbonSection = () => (
           <div className="ui-ribbon-wrapper">
             <div className="ui-ribbon">
                                 30% Off
-                            </div>
+            </div>
           </div>
           <div className="box-header">Ribbon-danger</div>
           <div className="box-body">
@@ -89,6 +89,6 @@ const RibbonSection = () => (
     </div>
 
   </article>
-    );
+);
 
 module.exports = RibbonSection;

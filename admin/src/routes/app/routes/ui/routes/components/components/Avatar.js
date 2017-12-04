@@ -6,12 +6,12 @@ import List from 'material-ui/List/List';
 import ListItem from 'material-ui/List/ListItem';
 
 import {
-    blue300,
-    indigo900,
-    orange200,
-    deepOrange300,
-    pink400,
-    purple500,
+  blue300,
+  indigo900,
+  orange200,
+  deepOrange300,
+  pink400,
+  purple500,
 } from 'material-ui/styles/colors';
 // Replaced FontIcon with local material-design-iconic-font
 const AvatarExampleSimple = () => (
@@ -20,16 +20,16 @@ const AvatarExampleSimple = () => (
       disabled
       leftAvatar={
         <Avatar src="assets/images-demo/avatars/uxceo-128.jpg" />
-            }
-        >
+      }
+    >
         Image Avatar
     </ListItem>
     <ListItem
       disabled
       leftAvatar={
         <Avatar icon={<i className="material-icons">camera</i>} />
-            }
-        >
+      }
+    >
         FontIcon Avatar
     </ListItem>
     <ListItem
@@ -39,17 +39,17 @@ const AvatarExampleSimple = () => (
           icon={<i className="material-icons">camera</i>}
           color={blue300}
           backgroundColor={indigo900}
-                />
-            }
-        >
+        />
+      }
+    >
         FontIcon Avatar with custom colors
     </ListItem>
     <ListItem
       disabled
       leftAvatar={
         <Avatar icon={<FileFolder />} />
-            }
-        >
+      }
+    >
         SvgIcon Avatar
     </ListItem>
     <ListItem
@@ -59,15 +59,15 @@ const AvatarExampleSimple = () => (
           icon={<FileFolder />}
           color={orange200}
           backgroundColor={pink400}
-                />
-            }
-        >
+        />
+      }
+    >
         SvgIcon Avatar with custom colors
     </ListItem>
     <ListItem
       disabled
       leftAvatar={<Avatar>A</Avatar>}
-        >
+    >
         Letter Avatar
     </ListItem>
     <ListItem
@@ -76,11 +76,11 @@ const AvatarExampleSimple = () => (
         <Avatar
           color={deepOrange300}
           backgroundColor={purple500}
-                >
-                    A
-                </Avatar>
-            }
         >
+                    A
+        </Avatar>
+      }
+    >
         Letter Avatar with custom colors
     </ListItem>
   </List>

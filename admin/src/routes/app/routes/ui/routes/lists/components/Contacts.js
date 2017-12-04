@@ -39,12 +39,13 @@ const ListExampleSimple = () => (
           primaryText="Adelle Charles"
           leftAvatar={
             <Avatar
-              color={pinkA200} backgroundColor={transparent}
+              color={pinkA200}
+              backgroundColor={transparent}
               style={{left: 8}}
-                        >
+            >
                             A
-                        </Avatar>
-                    }
+            </Avatar>
+          }
           rightAvatar={<Avatar src="assets/images-demo/avatars/adellecharles-128.jpg" />}
         />
         <ListItem

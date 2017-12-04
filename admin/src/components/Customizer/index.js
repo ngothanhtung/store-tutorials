@@ -30,7 +30,7 @@ class Customizer extends React.Component {
       <section
         className="quickview-wrapper customizer hidden-lg-down theme-light"
         id="quickview-customizer"
-            >
+      >
         <a className="customizer-close" href="javascript:;" onClick={this.closeCustomizer}>
           <span className="material-icons">close</span>
         </a>

@@ -31,7 +31,7 @@ function wrapState(ComposedComponent) {
         <ComposedComponent
           value={this.state.selectedIndex}
           onChange={this.handleRequestChange}
-                >
+        >
           {this.props.children}
         </ComposedComponent>
       );

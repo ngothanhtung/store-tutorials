@@ -25,21 +25,21 @@ class SignUp extends React.Component {
   }
 
   displayNotification = (title, message) => {
-    console.log("OK")
+    console.log('OK');
     ReactMaterialUiNotifications.showNotification({
       desktop: true,
-      title: title,
+      title,
       additionalText: message,
       icon: <Message />,
       iconBadgeColor: deepOrange500,
-      overflowText: "joe@gmail.com",
+      overflowText: 'joe@gmail.com',
       timestamp: moment().format('h:mm A')
-    })
+    });
   }
 
   // BINDING
   handleChange = (field, event) => {
-    var object = this.state.dataViewModel;
+    const object = this.state.dataViewModel;
     object[field] = event.target.value;
     this.setState({ dataViewModel: object });
   }
@@ -47,14 +47,14 @@ class SignUp extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    
+
     this.displayNotification('title', 'message');
     return;
-    //const { username, password, email } = this.state.dataViewModel;
+    // const { username, password, email } = this.state.dataViewModel;
 
-    var data = JSON.stringify(this.state.dataViewModel);
+    const data = JSON.stringify(this.state.dataViewModel);
 
-    var component = this;
+    const component = this;
     // url (required), options (optional)
     fetch('http://localhost:9000/api/register', {
       method: 'POST',
@@ -62,31 +62,27 @@ class SignUp extends React.Component {
       headers: new Headers({
         'Content-Type': 'application/json'
       })
-    }).then(function (response) {
-      return response.json()
-    }).then(function (result) {
+    }).then(response => response.json()).then((result) => {
       console.log(result);
       if (result.success === true) {
-        //save token to sessionStorage        
-        //sessionStorage.setItem("token", result.token);
+        // save token to sessionStorage
+        // sessionStorage.setItem("token", result.token);
 
         // save logged in user to sessionStorage
-        //sessionStorage.setItem("current-user", component.state.dataViewModel.username);
+        // sessionStorage.setItem("current-user", component.state.dataViewModel.username);
 
         // redirect to home
         component.displayNotification('title', 'message');
-        //hashHistory.push('/login');
+        // hashHistory.push('/login');
 
       } else {
-        //sessionStorage.removeItem("token");
+        // sessionStorage.removeItem("token");
       }
 
-    }).catch(function (err) {
+    }).catch((err) => {
       console.log(err);
     });
   }
-
-  
 
 
   render() {
@@ -105,7 +101,8 @@ class SignUp extends React.Component {
                   <TextField
                     floatingLabelText="Username"
                     fullWidth
-                    value={this.state.dataViewModel.username} onChange={this.handleChange.bind(this, 'username')}
+                    value={this.state.dataViewModel.username}
+                    onChange={this.handleChange.bind(this, 'username')}
                   />
                 </div>
                 <div className="form-group">
@@ -113,7 +110,8 @@ class SignUp extends React.Component {
                     floatingLabelText="Email"
                     type="email"
                     fullWidth
-                    value={this.state.dataViewModel.email} onChange={this.handleChange.bind(this, 'email')}
+                    value={this.state.dataViewModel.email}
+                    onChange={this.handleChange.bind(this, 'email')}
                   />
                 </div>
                 <div className="form-group">
@@ -121,7 +119,8 @@ class SignUp extends React.Component {
                     floatingLabelText="Password"
                     type="password"
                     fullWidth
-                    value={this.state.dataViewModel.password} onChange={this.handleChange.bind(this, 'password')}
+                    value={this.state.dataViewModel.password}
+                    onChange={this.handleChange.bind(this, 'password')}
                   />
                 </div>
                 <div className="divider" />
@@ -150,20 +149,20 @@ const Page = () => (
       <QueueAnim type="bottom" className="ui-animate">
         <div key="1">
           <SignUp />
-          
+
         </div>
-      </QueueAnim>     
+      </QueueAnim>
       <ReactMaterialUiNotifications
-            desktop={true}
-            transitionName={{
-              leave: 'dummy',
-              leaveActive: 'fadeOut',
-              appear: 'dummy',
-              appearActive: 'zoomInUp'
-            }}
-            transitionAppear={true}
-            transitionLeave={true}
-          /> 
+        desktop
+        transitionName={{
+          leave: 'dummy',
+          leaveActive: 'fadeOut',
+          appear: 'dummy',
+          appearActive: 'zoomInUp'
+        }}
+        transitionAppear
+        transitionLeave
+      />
     </div>
   </div>
 );

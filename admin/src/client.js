@@ -2,19 +2,21 @@ import React from 'react';
 import { render } from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import promise from 'redux-promise-middleware';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
 import { applyRouterMiddleware, Router, Route, hashHistory, IndexRedirect, Redirect } from 'react-router';
 import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
 import reducers from './reducers';
 
+const middleware = composeWithDevTools(applyMiddleware(promise(), thunk, routerMiddleware(hashHistory)));
+
 const store = createStore(
   reducers,
-  applyMiddleware(thunk, routerMiddleware(hashHistory))
+  middleware
 );
 
 const history = syncHistoryWithStore(hashHistory, store);
-// tungnt edited
-// const history = syncHistoryWithStore(browserHistory, store);
 
 function scrollToTop() {
   window.scrollTo(0, 0);

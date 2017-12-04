@@ -20,19 +20,19 @@ const RadioButtonExampleSimple = () => (
           value="light"
           label="Simple"
           style={styles.radioButton}
-                />
+        />
         <RadioButton
           value="not_light"
           label="Selected by default"
           style={styles.radioButton}
-                />
+        />
         <RadioButton
           value="ludicrous"
           label="Custom icon"
           checkedIcon={<ActionFavorite />}
           uncheckedIcon={<ActionFavoriteBorder />}
           style={styles.radioButton}
-                />
+        />
       </RadioButtonGroup>
       <RadioButtonGroup name="shipName" defaultSelected="community">
         <RadioButton
@@ -40,13 +40,13 @@ const RadioButtonExampleSimple = () => (
           label="Disabled unchecked"
           disabled
           style={styles.radioButton}
-                />
+        />
         <RadioButton
           value="community"
           label="Disabled checked"
           disabled
           style={styles.radioButton}
-                />
+        />
       </RadioButtonGroup>
     </div>
     <div className="col-lg-6">
@@ -55,19 +55,19 @@ const RadioButtonExampleSimple = () => (
           value="reverse"
           label="Label on the left"
           style={styles.radioButton}
-                />
+        />
         <RadioButton
           value="not_light"
           label="Selected by default"
           style={styles.radioButton}
-                />
+        />
         <RadioButton
           value="ludicrous"
           label="Custom icon"
           checkedIcon={<ActionFavorite />}
           uncheckedIcon={<ActionFavoriteBorder />}
           style={styles.radioButton}
-                />
+        />
       </RadioButtonGroup>
       <RadioButtonGroup name="shipName2" labelPosition="left" defaultSelected="community" style={styles.block}>
         <RadioButton
@@ -75,13 +75,13 @@ const RadioButtonExampleSimple = () => (
           label="Disabled unchecked"
           disabled
           style={styles.radioButton}
-                />
+        />
         <RadioButton
           value="community"
           label="Disabled checked"
           disabled
           style={styles.radioButton}
-                />
+        />
       </RadioButtonGroup>
     </div>
   </div>

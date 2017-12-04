@@ -28,17 +28,17 @@ class BottomNavigationExampleSimple extends Component {
             label="Recents"
             icon={recentsIcon}
             onTouchTap={() => this.select(0)}
-                    />
+          />
           <BottomNavigationItem
             label="Favorites"
             icon={favoritesIcon}
             onTouchTap={() => this.select(1)}
-                    />
+          />
           <BottomNavigationItem
             label="Nearby"
             icon={nearbyIcon}
             onTouchTap={() => this.select(2)}
-                    />
+          />
         </BottomNavigation>
       </Paper>
     );
@@ -58,6 +58,6 @@ const BottomNavigationSection = () => (
       </div>
     </section>
   </article>
-    );
+);
 
 export default BottomNavigationSection;

@@ -29,7 +29,7 @@ class ForgotPassowrd extends React.Component {
                   />
                   <div className="additional-info text-center text-small">
                     Enter your email address that you used to register. We'll send you an email with your username and a link to reset your password.
-                 </div>
+                  </div>
                 </div>
               </fieldset>
             </form>

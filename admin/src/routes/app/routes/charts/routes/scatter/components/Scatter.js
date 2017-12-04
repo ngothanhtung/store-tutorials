@@ -16,13 +16,13 @@ scatter1.options = {
     formatter(params) {
       if (params.value.length > 1) {
         return `${params.seriesName} :<br/>${
-                    params.value[0]}cm ${
-                    params.value[1]}kg `;
+          params.value[0]}cm ${
+          params.value[1]}kg `;
       }
 
       return `${params.seriesName} :<br/>${
-                    params.name} : ${
-                    params.value}kg `;
+        params.name} : ${
+        params.value}kg `;
 
     },
     axisPointer: {
@@ -149,13 +149,13 @@ scatter1.options = {
       ],
       markPoint: {
         data: [
-                    {type: 'max', name: 'Max'},
-                    {type: 'min', name: 'Min'}
+          {type: 'max', name: 'Max'},
+          {type: 'min', name: 'Min'}
         ]
       },
       markLine: {
         data: [
-                    {type: 'average', name: 'Average'}
+          {type: 'average', name: 'Average'}
         ]
       }
     },

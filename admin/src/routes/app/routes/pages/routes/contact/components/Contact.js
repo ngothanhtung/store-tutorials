@@ -12,7 +12,7 @@ const Hero = () => (
       <p className="hero-tagline">Feel free to contact us if you have any questions</p>
     </section>
   </article>
-    );
+);
 
 const Contact = () => (
   <article className="article article-dark">

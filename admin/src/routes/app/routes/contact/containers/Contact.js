@@ -5,6 +5,7 @@ import { hashHistory } from 'react-router';
 
 import { connect } from 'react-redux';
 import { fetchContacts } from '../actions/contact-actions';
+import ContactList from './ContactList';
 
 class Contact extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class Contact extends React.Component {
         <QueueAnim type="bottom" className="ui-animate">
           <div key="1">
             <h2>Contact Page</h2>
+            <ContactList contacts={this.props.contacts} />
           </div>
         </QueueAnim>
       </section>

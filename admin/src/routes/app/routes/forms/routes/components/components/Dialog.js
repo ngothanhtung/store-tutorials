@@ -97,9 +97,9 @@ class DialogExampleModal extends React.Component {
               actions={actions}
               modal
               open={this.state.open}
-              >
+            >
                 Only actions can close this dialog.
-              </Dialog>
+            </Dialog>
           </div>
         </div>
       </div>
@@ -153,9 +153,9 @@ class DialogExampleCustomWidth extends React.Component {
               modal
               contentStyle={customContentStyle}
               open={this.state.open}
-              >
+            >
                 This dialog spans the entire width of the screen.
-              </Dialog>
+            </Dialog>
           </div>
         </div>
       </div>

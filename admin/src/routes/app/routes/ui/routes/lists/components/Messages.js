@@ -15,7 +15,7 @@ const iconButtonElement = (
     touch
     tooltip="more"
     tooltipPosition="bottom-left"
-    >
+  >
     <MoreVertIcon color={grey400} />
   </IconButton>
 );
