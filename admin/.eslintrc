@@ -38,6 +38,7 @@
     "no-plusplus": 0,
     "no-shadow": 0,
     "react/sort-comp": ["warn"],
-    class-methods-use-this: ["warn"],
+    "class-methods-use-this": ["warn"],
+    "jsx-a11y/href-no-hash": ["off"]
   }
 }

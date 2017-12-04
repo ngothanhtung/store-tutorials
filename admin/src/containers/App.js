@@ -53,9 +53,9 @@ class App extends Component {
               'theme-dark': theme === 'dark',
               'sidebar-sm': sidebarWidth === 'small',
               'sidebar-lg': sidebarWidth === 'large'})
-                    }>
+            }>
             {this.props.children}
-          </div>          
+          </div>
         </div>
       </MuiThemeProvider>
     );
