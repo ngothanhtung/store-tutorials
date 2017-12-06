@@ -1,10 +1,10 @@
 import React from 'react';
 import APPCONFIG from 'constants/Config';
 import QueueAnim from 'rc-queue-anim';
-import { hashHistory } from 'react-router';
+import {hashHistory} from 'react-router';
 
 import { connect } from 'react-redux';
-import { fetchContacts, newContact, saveContact } from '../actions/contact-actions';
+import {fetchContacts, newContact, saveContact} from '../actions/contact-actions';
 import ContactList from './components/ContactList';
 import AddContactForm from './components/AddContactForm';
 
@@ -20,6 +20,10 @@ class ContactPage extends React.Component {
     this.props.fetchContacts();
   }
 
+  submit = (values) => {
+    this.props.saveContact(values);
+  }
+
   render() {
     return (
       <section className="container-fluid with-maxwidth chapter">
@@ -28,7 +32,7 @@ class ContactPage extends React.Component {
             <h2>Contact Page</h2>
             <ContactList contacts={this.props.contacts} />
             <hr />
-            <AddContactForm saveContact={this.props.saveContact} />
+            <AddContactForm onSubmit={this.submit} />
           </div>
         </QueueAnim>
       </section>
@@ -38,9 +42,7 @@ class ContactPage extends React.Component {
 
 // Make contacts  array available in  props
 function mapStateToProps(state) {
-  return {
-    contacts: state.contactReducer.contacts
-  };
+  return {contacts: state.contactReducer.contacts};
 }
 
-module.exports = connect(mapStateToProps, { fetchContacts, saveContact })(ContactPage);
+module.exports = connect(mapStateToProps, {fetchContacts, saveContact})(ContactPage);

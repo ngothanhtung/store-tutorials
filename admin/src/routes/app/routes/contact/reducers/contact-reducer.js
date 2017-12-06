@@ -31,15 +31,44 @@ export default (state = defaultState, action = {}) => {
       };
     }
 
-    case 'SAVE_CONTACT': {
-      const result = {
+    // case 'SAVE_CONTACT': {
+    //   const result = {
+    //     ...state,
+    //     contacts: [...state.contacts, action.payload],
+    //     errors: {},
+    //     loading: false
+    //   };
+    //   return result;
+    // }
+
+    case 'SAVE_CONTACT_PENDING': {
+      return {
         ...state,
-        contacts: [...state.contacts, action.payload],
+        loading: true
+      };
+    }
+
+    case 'SAVE_CONTACT_FULFILLED': {
+      return {
+        ...state,
+        contacts: [...state.contacts, action.payload.data],
         errors: {},
         loading: false
       };
-      return result;
     }
+
+    case 'SAVE_CONTACT_REJECTED': {
+      const data = action.payload.response.data;
+      // convert feathers error formatting to match client-side error formatting
+      const { 'name.first': first, 'name.last': last, phone, email } = data.errors;
+      const errors = { global: data.message, name: { first, last }, phone, email };
+      return {
+        ...state,
+        errors,
+        loading: false
+      };
+    }
+
     default:
       return state;
   }

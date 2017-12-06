@@ -1,4 +1,3 @@
-import { contacts } from '../data';
 import { client } from './';
 
 const url = '/api/contacts';
@@ -16,7 +15,7 @@ export function saveContact(contact) {
   return (dispatch) => {
     dispatch({
       type: 'SAVE_CONTACT',
-      payload: contact
+      payload: client.post(url, contact)
     });
   };
 }

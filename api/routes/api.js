@@ -44,6 +44,17 @@ router.get('/contacts', function (req, res) {
     })
 });
 
+router.post('/contacts', function (req, res) {
+    var data = req.body;
+    db.insertDocument(data, "contacts", function (result) {
+        res.json({
+            success: true,
+            message: "OK",
+            token: "",
+            data: result
+        });
+    })
+});
 
 // ---------------------------------------------------------
 // route middleware to authenticate and check token

@@ -1,60 +1,29 @@
 import React from 'react';
+import { Field, reduxForm } from 'redux-form';
 import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
 
 class AddContactForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      dataViewModel: {
-        firstname: '',
-        lastname: '',
-        email: ''
-      }
-    };
-  }
-
-
-  onSubmit = () => {
-    this.props.saveContact(
-      {
-        id: '9',
-        name: {
-          first: this.state.dataViewModel.firstname,
-          last: this.state.dataViewModel.lastname,
-        },
-        email: this.state.dataViewModel.email,
-      }
-    );
-  };
-
-  // BINDING
-  handleChange = (field, event) => {
-    const object = this.state.dataViewModel;
-    object[field] = event.target.value;
-    this.setState({ dataViewModel: object });
-  }
-
   render() {
+    const { handleSubmit } = this.props;
     return (
       <div>
-        <form onSubmit={this.onSubmit} >
+        <form onSubmit={handleSubmit} >
           <div className="form-group row">
-            <label htmlFor="inputFirstName" className="col-md-2 control-label">First name</label>
+            <label htmlFor="name.first" className="col-md-2 control-label">First name</label>
             <div className="col-md-10">
-              <input type="text" className="form-control" id="inputFirstName" placeholder="" value={this.state.dataViewModel.firstname} onChange={this.handleChange.bind(this, 'firstname')} />
+              <Field name="name.first" component="input" className="form-control" type="text" />
             </div>
           </div>
           <div className="form-group row">
-            <label htmlFor="inputLastName" className="col-md-2 control-label">Last name</label>
+            <label htmlFor="name.last" className="col-md-2 control-label">Last name</label>
             <div className="col-md-10">
-              <input type="text" className="form-control" id="inputLastName" placeholder="" value={this.state.dataViewModel.lastname} onChange={this.handleChange.bind(this, 'lastname')} />
+              <Field name="name.last" component="input" className="form-control" type="text" />
             </div>
           </div>
           <div className="form-group row">
-            <label htmlFor="inputEmail" className="col-md-2 control-label">Contact email</label>
+            <label htmlFor="email" className="col-md-2 control-label">Contact email</label>
             <div className="col-md-10">
-              <input type="email" className="form-control" id="inputEmail" placeholder="" value={this.state.dataViewModel.email} onChange={this.handleChange.bind(this, 'email')} />
+              <Field name="email" component="input" className="form-control" type="email" />
             </div>
           </div>
           <div className="form-group row">
@@ -68,5 +37,5 @@ class AddContactForm extends React.Component {
   }
 }
 
-export default AddContactForm;
+export default reduxForm({ form: 'AddContactForm'})(AddContactForm);
 
