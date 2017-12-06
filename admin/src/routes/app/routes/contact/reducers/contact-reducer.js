@@ -15,12 +15,6 @@ export default (state = defaultState, action = {}) => {
         contacts: action.payload
       };
     }
-    case 'NEW_CONTACT': {
-      return {
-        ...state,
-        contact: { name: {} }
-      };
-    }
 
     case 'SAVE_CONTACT': {
       const result = {
@@ -29,7 +23,6 @@ export default (state = defaultState, action = {}) => {
         errors: {},
         loading: false
       };
-      console.log(result);
       return result;
     }
     default:

@@ -8,7 +8,7 @@ import { hashHistory } from 'react-router';
 
 import ReactMaterialUiNotifications from 'react-materialui-notifications';
 import Message from 'material-ui/svg-icons/communication/message';
-import {deepOrange500} from 'material-ui/styles/colors';
+import { deepOrange500 } from 'material-ui/styles/colors';
 import moment from 'moment';
 
 class SignUp extends React.Component {
