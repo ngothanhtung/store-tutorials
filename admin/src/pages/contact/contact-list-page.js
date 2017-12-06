@@ -6,9 +6,9 @@ class ContactListPage extends Component {
     return (
       <div>
         <h1>List of Contacts</h1>
-        <ContactList/>
+        <ContactList />
       </div>
-    )
+    );
   }
 }
 

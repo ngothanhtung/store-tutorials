@@ -19,19 +19,19 @@ class Login extends React.Component {
   }
 
   // BINDING
-	handleChange(field, event) {
-		var object = this.state.dataViewModel;
-		object[field] = event.target.value;
-		this.setState({ dataViewModel: object });
-	}
+  handleChange(field, event) {
+    const object = this.state.dataViewModel;
+    object[field] = event.target.value;
+    this.setState({ dataViewModel: object });
+  }
 
   handleSubmit = (event) => {
     event.preventDefault();
     const { username, password } = this.state.dataViewModel;
 
-    var data = JSON.stringify(this.state.dataViewModel);
-    
-    var component = this;
+    const data = JSON.stringify(this.state.dataViewModel);
+
+    const component = this;
     // url (required), options (optional)
     fetch('http://localhost:9000/api/authenticate', {
       method: 'POST',
@@ -39,25 +39,23 @@ class Login extends React.Component {
       headers: new Headers({
         'Content-Type': 'application/json'
       })
-    }).then(function (response) {
-      return response.json()
-    }).then(function (result) {
+    }).then(response => response.json()).then((result) => {
       console.log(result);
-      if (result.success === true) {        
-        //save token to sessionStorage        
-        sessionStorage.setItem("token", result.token);
+      if (result.success === true) {
+        // save token to sessionStorage
+        sessionStorage.setItem('token', result.token);
 
         // save logged in user to sessionStorage
-        sessionStorage.setItem("current-user", component.state.dataViewModel.username);
+        sessionStorage.setItem('current-user', component.state.dataViewModel.username);
 
         // redirect to home
         hashHistory.push('/');
 
       } else {
-        sessionStorage.removeItem("token");
+        sessionStorage.removeItem('token');
       }
 
-    }).catch(function (err) {
+    }).catch((err) => {
       console.log(err);
     });
   }
@@ -79,7 +77,8 @@ class Login extends React.Component {
                     name="username"
                     floatingLabelText="Username"
                     fullWidth
-                    value={this.state.dataViewModel.username} onChange={this.handleChange.bind(this, 'username')}
+                    value={this.state.dataViewModel.username}
+                    onChange={this.handleChange.bind(this, 'username')}
                   />
                 </div>
                 <div className="form-group">
@@ -88,11 +87,12 @@ class Login extends React.Component {
                     floatingLabelText="Password"
                     type="password"
                     fullWidth
-                    value={this.state.dataViewModel.password} onChange={this.handleChange.bind(this, 'password')}
+                    value={this.state.dataViewModel.password}
+                    onChange={this.handleChange.bind(this, 'password')}
                   />
                 </div>
               </fieldset>
-              <div className="card-action no-border text-right">                
+              <div className="card-action no-border text-right">
                 <RaisedButton type="submit" label="Login" primary />
               </div>
             </form>

@@ -27,7 +27,7 @@ const Invoice = () => (
               PO Box 21177 <br />
               MELBOURNE VIC 8011 <br />
               Austria
-            </div>
+          </div>
           <div className="col-6 text-right">
             <p><strong>Details:</strong></p>
             <strong>Date:</strong> August 10, 2014 <br />

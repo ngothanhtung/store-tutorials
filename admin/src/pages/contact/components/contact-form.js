@@ -6,7 +6,7 @@ class ContactForm extends Component {
       <div>
         <p>Form under construction</p>
       </div>
-    )
+    );
   }
 }
 

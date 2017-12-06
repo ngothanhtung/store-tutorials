@@ -85,7 +85,7 @@ export default class ChipExampleSimple extends React.Component {
           >
             <Avatar color="#444" icon={<SvgIconFace />} />
               SvgIcon Avatar Chip
-            </Chip>
+          </Chip>
 
           <Chip onTouchTap={handleTouchTap} style={styles.chip}>
             <Avatar size={32}>A</Avatar>

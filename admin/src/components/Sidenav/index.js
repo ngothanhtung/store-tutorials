@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { Link, hashHistory } from 'react-router';
 import APPCONFIG from 'constants/Config';
 import {
-    toggleCollapsedNav
+  toggleCollapsedNav
 } from '../../actions';
 import SidenavContent from './SidenavContent';
 
@@ -43,7 +43,7 @@ class Sidebar extends React.Component {
         className={classnames('app-sidebar', {
           'bg-color-light': ['31', '32', '33', '34', '35', '36'].indexOf(colorOption) >= 0,
           'bg-color-dark': ['31', '32', '33', '34', '35', '36'].indexOf(colorOption) < 0 })}
-            >
+      >
         <section
           className={classnames('sidebar-header', {
             'bg-color-dark': ['11', '31'].indexOf(colorOption) >= 0,
@@ -53,7 +53,7 @@ class Sidebar extends React.Component {
             'bg-color-info': ['14', '24', '34'].indexOf(colorOption) >= 0,
             'bg-color-warning': ['15', '25', '35'].indexOf(colorOption) >= 0,
             'bg-color-danger': ['16', '26', '36'].indexOf(colorOption) >= 0 })}
-                >
+        >
           <svg className="logo-img logo-react" viewBox="0 0 3925 3525" version="1.1" xmlns="http://www.w3.org/2000/svg">
             <circle className="react-dot" stroke="none" cx="1960" cy="1760" r="355" />
             <g className="react-curve" strokeWidth="170" fill="none">

@@ -131,6 +131,6 @@ const ProgressSection = () => (
       </div>
     </section>
   </article>
-    );
+);
 
 module.exports = ProgressSection;

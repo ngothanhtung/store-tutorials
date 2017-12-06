@@ -5,5 +5,5 @@ export default function ContactList() {
     <div>
       <p>No contacts here</p>
     </div>
-  )
+  );
 }

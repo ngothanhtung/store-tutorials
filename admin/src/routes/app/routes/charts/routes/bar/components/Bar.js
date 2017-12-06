@@ -69,13 +69,13 @@ bar1.options = {
       data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
       markPoint: {
         data: [
-                    {type: 'max', name: 'Max'},
-                    {type: 'min', name: 'Min'}
+          {type: 'max', name: 'Max'},
+          {type: 'min', name: 'Min'}
         ]
       },
       markLine: {
         data: [
-                    {type: 'average', name: 'Average'}
+          {type: 'average', name: 'Average'}
         ]
       }
     },
@@ -185,7 +185,7 @@ bar2.options = {
           }
         },
         data: [
-                    [{type: 'min'}, {type: 'max'}]
+          [{type: 'min'}, {type: 'max'}]
         ]
       }
     },

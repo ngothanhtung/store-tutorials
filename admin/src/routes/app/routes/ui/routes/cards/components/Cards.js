@@ -19,7 +19,7 @@ const ExpandableCards = () => (
             titleColor="#fff"
             subtitleColor="#e1e1e1"
             style={{color: '#fff'}}
-                        />
+          />
           <CardText
             expandable
             style={{color: '#fff'}}
@@ -32,7 +32,7 @@ const ExpandableCards = () => (
           <CardActions
             expandable
             style={{color: '#fff'}}
-                        >
+          >
             <FlatButton label="Action1" style={{color: '#fff'}} />
             <FlatButton label="Action2" style={{color: '#fff'}} />
           </CardActions>

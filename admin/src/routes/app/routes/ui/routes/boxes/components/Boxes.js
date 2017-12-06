@@ -31,7 +31,7 @@ const BasicBoxes = () => (
       </div>
     </div>
   </article>
-)
+);
 
 const BoxesWithStyle = () => (
   <article className="article">
@@ -40,7 +40,7 @@ const BoxesWithStyle = () => (
       <div className="col-xl-4">
         <div className="box box-default">
           <div className="box-header">Box with Divider</div>
-          <div className="box-divider"></div>
+          <div className="box-divider" />
           <div className="box-body">
             This is the body of box component. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, quasi nam. Nisi assumenda nulla consequatur perferendis, voluptatum, laborum provident eos amet quos, ullam possimus facilis quasi? Magnam optio voluptates ipsam.
           </div>
@@ -66,7 +66,7 @@ const BoxesWithStyle = () => (
       </div>
     </div>
   </article>
-)
+);
 
 const BoxColors = () => (
   <article className="article">
@@ -129,7 +129,7 @@ const BoxColors = () => (
       <div className="col-xl-4">
         <div className="box bg-color-success">
           <div className="box-header ">Box Header</div>
-          <div className="box-divider"></div>
+          <div className="box-divider" />
           <div className="box-body">
             This is the body of box component. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, quasi nam. Nisi assumenda nulla consequatur perferendis, voluptatum, laborum provident eos amet quos, ullam possimus facilis quasi? Magnam optio voluptates ipsam.
           </div>
@@ -138,7 +138,7 @@ const BoxColors = () => (
       <div className="col-xl-4">
         <div className="box bg-color-warning">
           <div className="box-header ">Box Header</div>
-          <div className="box-divider"></div>
+          <div className="box-divider" />
           <div className="box-body">
             This is the body of box component. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, quasi nam. Nisi assumenda nulla consequatur perferendis, voluptatum, laborum provident eos amet quos, ullam possimus facilis quasi? Magnam optio voluptates ipsam.
           </div>
@@ -147,27 +147,25 @@ const BoxColors = () => (
       <div className="col-xl-4">
         <div className="box bg-color-danger">
           <div className="box-header ">Box Header</div>
-          <div className="box-divider"></div>
+          <div className="box-divider" />
           <div className="box-body">
             This is the body of box component. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, quasi nam. Nisi assumenda nulla consequatur perferendis, voluptatum, laborum provident eos amet quos, ullam possimus facilis quasi? Magnam optio voluptates ipsam.
           </div>
         </div>
-      </div> 
+      </div>
     </div>
   </article>
-)
+);
 
 
-const Page = () => {
-  return (
-    <section className="container-fluid with-maxwidth chapter">
-      <QueueAnim type="bottom" className="ui-animate">
-        <div key="1"><BasicBoxes /></div>
-        <div key="2"><BoxesWithStyle /></div>
-        <div key="3"><BoxColors /></div>
-      </QueueAnim>
-    </section>
-  )
-}
+const Page = () => (
+  <section className="container-fluid with-maxwidth chapter">
+    <QueueAnim type="bottom" className="ui-animate">
+      <div key="1"><BasicBoxes /></div>
+      <div key="2"><BoxesWithStyle /></div>
+      <div key="3"><BoxColors /></div>
+    </QueueAnim>
+  </section>
+);
 
 module.exports = Page;

@@ -10,7 +10,7 @@ module.exports = {
         require('./routes/pageLayouts'),
         require('./routes/pages'),
         require('./routes/tables'),
-        require('./routes/ui'),     
+        require('./routes/ui'),
         require('./routes/contact'),
       ]);
     });

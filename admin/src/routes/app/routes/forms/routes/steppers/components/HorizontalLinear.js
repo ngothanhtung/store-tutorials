@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-    Step,
-    Stepper,
-    StepLabel,
+  Step,
+  Stepper,
+  StepLabel,
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
@@ -76,26 +76,26 @@ class HorizontalLinearStepper extends React.Component {
                       }}
                     >
                       Click here
-                      </a> to reset the example.
-                      </p>
-                  ) : (
-                    <div>
-                      <p>{this.getStepContent(stepIndex)}</p>
-                      <div style={{marginTop: 12}}>
-                        <FlatButton
-                          label="Back"
-                          disabled={stepIndex === 0}
-                          onTouchTap={this.handlePrev}
-                          style={{marginRight: 12}}
-                        />
-                        <RaisedButton
-                          label={stepIndex === 2 ? 'Finish' : 'Next'}
-                          primary
-                          onTouchTap={this.handleNext}
-                        />
-                      </div>
+                    </a> to reset the example.
+                  </p>
+                ) : (
+                  <div>
+                    <p>{this.getStepContent(stepIndex)}</p>
+                    <div style={{marginTop: 12}}>
+                      <FlatButton
+                        label="Back"
+                        disabled={stepIndex === 0}
+                        onTouchTap={this.handlePrev}
+                        style={{marginRight: 12}}
+                      />
+                      <RaisedButton
+                        label={stepIndex === 2 ? 'Finish' : 'Next'}
+                        primary
+                        onTouchTap={this.handleNext}
+                      />
                     </div>
-                  )}
+                  </div>
+                )}
               </div>
 
               <div className="divider divider-xl" />

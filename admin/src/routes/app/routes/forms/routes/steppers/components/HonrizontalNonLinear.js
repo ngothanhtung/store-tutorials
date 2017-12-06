@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-    Step,
-    Stepper,
-    StepButton,
+  Step,
+  Stepper,
+  StepButton,
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';

@@ -10,7 +10,7 @@ const AvatarExampleSimple = () => (
       iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
       anchorOrigin={{horizontal: 'left', vertical: 'top'}}
       targetOrigin={{horizontal: 'left', vertical: 'top'}}
-        >
+    >
       <MenuItem primaryText="Refresh" />
       <MenuItem primaryText="Send feedback" />
       <MenuItem primaryText="Settings" />
@@ -21,7 +21,7 @@ const AvatarExampleSimple = () => (
       iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
       anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
       targetOrigin={{horizontal: 'left', vertical: 'bottom'}}
-        >
+    >
       <MenuItem primaryText="Refresh" />
       <MenuItem primaryText="Send feedback" />
       <MenuItem primaryText="Settings" />
@@ -32,7 +32,7 @@ const AvatarExampleSimple = () => (
       iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
       anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
       targetOrigin={{horizontal: 'right', vertical: 'bottom'}}
-        >
+    >
       <MenuItem primaryText="Refresh" />
       <MenuItem primaryText="Send feedback" />
       <MenuItem primaryText="Settings" />
@@ -43,7 +43,7 @@ const AvatarExampleSimple = () => (
       iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
       anchorOrigin={{horizontal: 'right', vertical: 'top'}}
       targetOrigin={{horizontal: 'right', vertical: 'top'}}
-        >
+    >
       <MenuItem primaryText="Refresh" />
       <MenuItem primaryText="Send feedback" />
       <MenuItem primaryText="Settings" />
@@ -59,7 +59,7 @@ const IconMenuExampleScrollable = () => (
     anchorOrigin={{horizontal: 'left', vertical: 'top'}}
     targetOrigin={{horizontal: 'left', vertical: 'top'}}
     maxHeight={272}
-    >
+  >
     <MenuItem value="AL" primaryText="Alabama" />
     <MenuItem value="AK" primaryText="Alaska" />
     <MenuItem value="AZ" primaryText="Arizona" />
@@ -143,6 +143,6 @@ const IconMenuSection = () => (
       </div>
     </div>
   </article>
-    );
+);
 
 module.exports = IconMenuSection;

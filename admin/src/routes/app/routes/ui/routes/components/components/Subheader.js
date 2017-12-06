@@ -36,6 +36,6 @@ const TmplSection = () => (
 
     </div>
   </section>
-    );
+);
 
 module.exports = TmplSection;

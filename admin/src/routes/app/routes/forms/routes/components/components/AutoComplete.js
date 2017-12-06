@@ -52,8 +52,8 @@ const dataSource1 = [
       <MenuItem
         primaryText="text-value1"
         secondaryText="&#9786;"
-            />
-        ),
+      />
+    ),
   },
   {
     text: 'text-value2',
@@ -61,16 +61,16 @@ const dataSource1 = [
       <MenuItem
         primaryText="text-value2"
         secondaryText="&#9786;"
-            />
-        ),
+      />
+    ),
   },
 ];
 
 const dataSource2 = ['12345', '23456', '34567'];
 
 const dataSource3 = [
-    {textKey: 'Some Text', valueKey: 'someFirstValue'},
-    {textKey: 'Some Text', valueKey: 'someSecondValue'},
+  {textKey: 'Some Text', valueKey: 'someFirstValue'},
+  {textKey: 'Some Text', valueKey: 'someSecondValue'},
 ];
 const dataSourceConfig = {
   text: 'textKey',

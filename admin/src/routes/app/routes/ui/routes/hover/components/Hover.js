@@ -62,7 +62,7 @@ const MaterialHover = () => (
       </div>
     </div>
   </article>
-    );
+);
 
 const Classic = () => (
   <article className="article">

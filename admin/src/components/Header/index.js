@@ -33,7 +33,7 @@ class Header extends React.Component {
             'bg-color-info': ['24', '34'].indexOf(colorOption) >= 0,
             'bg-color-warning': ['25', '35'].indexOf(colorOption) >= 0,
             'bg-color-danger': ['26', '36'].indexOf(colorOption) >= 0 })}
-                >
+        >
           <div className="hidden-lg-up float-left">
             <a href="javascript:;" className="md-button header-icon toggle-sidebar-btn" ref={(c) => { this.sidebarBtn = c; }}>
               <i className="material-icons">menu</i>

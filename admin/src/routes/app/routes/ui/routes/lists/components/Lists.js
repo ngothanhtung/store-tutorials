@@ -54,6 +54,6 @@ const Lists = () => (
       </div>
     </QueueAnim>
   </div>
-    );
+);
 
 module.exports = Lists;

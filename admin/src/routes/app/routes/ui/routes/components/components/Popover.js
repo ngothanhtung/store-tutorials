@@ -17,7 +17,7 @@ class PopoverExampleSimple extends React.Component {
   }
 
   handleTouchTap = (event) => {
-        // This prevents ghost click.
+    // This prevents ghost click.
     event.preventDefault();
 
     this.setState({
@@ -41,14 +41,14 @@ class PopoverExampleSimple extends React.Component {
             <RaisedButton
               onTouchTap={this.handleTouchTap}
               label="Click me"
-                        />
+            />
             <Popover
               open={this.state.open}
               anchorEl={this.state.anchorEl}
               anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
               targetOrigin={{horizontal: 'left', vertical: 'top'}}
               onRequestClose={this.handleRequestClose}
-                        >
+            >
               <Menu>
                 <MenuItem primaryText="Refresh" />
                 <MenuItem primaryText="Help &amp; feedback" />
@@ -74,7 +74,7 @@ class PopoverExampleAnimation extends React.Component {
   }
 
   handleTouchTap = (event) => {
-        // This prevents ghost click.
+    // This prevents ghost click.
     event.preventDefault();
     this.setState({
       open: true,
@@ -97,7 +97,7 @@ class PopoverExampleAnimation extends React.Component {
             <RaisedButton
               onTouchTap={this.handleTouchTap}
               label="Click me"
-                        />
+            />
             <Popover
               open={this.state.open}
               anchorEl={this.state.anchorEl}
@@ -105,7 +105,7 @@ class PopoverExampleAnimation extends React.Component {
               targetOrigin={{horizontal: 'left', vertical: 'top'}}
               onRequestClose={this.handleRequestClose}
               animation={PopoverAnimationVertical}
-                        >
+            >
               <Menu>
                 <MenuItem primaryText="Refresh" />
                 <MenuItem primaryText="Help &amp; feedback" />
@@ -151,7 +151,7 @@ class PopoverExampleConfigurable extends React.Component {
   }
 
   handleTouchTap = (event) => {
-        // This prevents ghost click.
+    // This prevents ghost click.
     event.preventDefault();
     this.setState({
       open: true,
@@ -190,7 +190,7 @@ class PopoverExampleConfigurable extends React.Component {
           <RaisedButton
             onTouchTap={this.handleTouchTap}
             label="Click me"
-                    />
+          />
           <div className="callout callout-info">
             <h4>Current Settings</h4>
             <div className="divider" />
@@ -212,15 +212,18 @@ class PopoverExampleConfigurable extends React.Component {
               <div className="divider" />
               <RadioButton
                 onClick={this.setAnchor.bind(this, 'vertical', 'top')}
-                label="Top" checked={this.state.anchorOrigin.vertical === 'top'}
+                label="Top"
+                checked={this.state.anchorOrigin.vertical === 'top'}
               />
               <RadioButton
                 onClick={this.setAnchor.bind(this, 'vertical', 'center')}
-                label="Center" checked={this.state.anchorOrigin.vertical === 'center'}
+                label="Center"
+                checked={this.state.anchorOrigin.vertical === 'center'}
               />
               <RadioButton
                 onClick={this.setAnchor.bind(this, 'vertical', 'bottom')}
-                label="Bottom" checked={this.state.anchorOrigin.vertical === 'bottom'}
+                label="Bottom"
+                checked={this.state.anchorOrigin.vertical === 'bottom'}
               />
             </div>
             <div style={styles.block2}>
@@ -228,15 +231,18 @@ class PopoverExampleConfigurable extends React.Component {
               <div className="divider" />
               <RadioButton
                 onClick={this.setAnchor.bind(this, 'horizontal', 'left')}
-                label="Left" checked={this.state.anchorOrigin.horizontal === 'left'}
+                label="Left"
+                checked={this.state.anchorOrigin.horizontal === 'left'}
               />
               <RadioButton
                 onClick={this.setAnchor.bind(this, 'horizontal', 'middle')}
-                label="Middle" checked={this.state.anchorOrigin.horizontal === 'middle'}
+                label="Middle"
+                checked={this.state.anchorOrigin.horizontal === 'middle'}
               />
               <RadioButton
                 onClick={this.setAnchor.bind(this, 'horizontal', 'right')}
-                label="Right" checked={this.state.anchorOrigin.horizontal === 'right'}
+                label="Right"
+                checked={this.state.anchorOrigin.horizontal === 'right'}
               />
             </div>
           </div>
@@ -248,15 +254,18 @@ class PopoverExampleConfigurable extends React.Component {
               <div className="divider" />
               <RadioButton
                 onClick={this.setTarget.bind(this, 'vertical', 'top')}
-                label="Top" checked={this.state.targetOrigin.vertical === 'top'}
+                label="Top"
+                checked={this.state.targetOrigin.vertical === 'top'}
               />
               <RadioButton
                 onClick={this.setTarget.bind(this, 'vertical', 'center')}
-                label="Center" checked={this.state.targetOrigin.vertical === 'center'}
+                label="Center"
+                checked={this.state.targetOrigin.vertical === 'center'}
               />
               <RadioButton
                 onClick={this.setTarget.bind(this, 'vertical', 'bottom')}
-                label="Bottom" checked={this.state.targetOrigin.vertical === 'bottom'}
+                label="Bottom"
+                checked={this.state.targetOrigin.vertical === 'bottom'}
               />
             </div>
             <div style={styles.block2}>
@@ -264,15 +273,18 @@ class PopoverExampleConfigurable extends React.Component {
               <div className="divider" />
               <RadioButton
                 onClick={this.setTarget.bind(this, 'horizontal', 'left')}
-                label="Left" checked={this.state.targetOrigin.horizontal === 'left'}
+                label="Left"
+                checked={this.state.targetOrigin.horizontal === 'left'}
               />
               <RadioButton
                 onClick={this.setTarget.bind(this, 'horizontal', 'middle')}
-                label="Middle" checked={this.state.targetOrigin.horizontal === 'middle'}
+                label="Middle"
+                checked={this.state.targetOrigin.horizontal === 'middle'}
               />
               <RadioButton
                 onClick={this.setTarget.bind(this, 'horizontal', 'right')}
-                label="Right" checked={this.state.targetOrigin.horizontal === 'right'}
+                label="Right"
+                checked={this.state.targetOrigin.horizontal === 'right'}
               />
             </div>
           </div>
@@ -282,7 +294,7 @@ class PopoverExampleConfigurable extends React.Component {
             anchorOrigin={this.state.anchorOrigin}
             targetOrigin={this.state.targetOrigin}
             onRequestClose={this.handleRequestClose}
-                    >
+          >
             <Menu>
               <MenuItem primaryText="Refresh" />
               <MenuItem primaryText="Help &amp; feedback" />
@@ -323,6 +335,6 @@ const PopoverSection = () => (
     </section>
   </article>
 
-    );
+);
 
 module.exports = PopoverSection;

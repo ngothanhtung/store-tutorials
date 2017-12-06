@@ -26,6 +26,6 @@ const CalloutSection = () => (
       </div>
     </div>
   </article>
-    );
+);
 
 module.exports = CalloutSection;

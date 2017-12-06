@@ -87,7 +87,7 @@ line1.options = {
       data: [1, -2, 2, 5, 3, 2, 0],
       markPoint: {
         data: [
-                    {name: 'Lowest temperature', value: -2, xAxis: 1, yAxis: -1.5}
+          {name: 'Lowest temperature', value: -2, xAxis: 1, yAxis: -1.5}
         ]
       },
       markLine: {

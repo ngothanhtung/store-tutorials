@@ -35,13 +35,13 @@ class SnackbarExampleSimple extends React.Component {
             <RaisedButton
               onTouchTap={this.handleTouchTap}
               label="Add to my calendar"
-                        />
+            />
             <Snackbar
               open={this.state.open}
               message="Event added to your calendar"
               autoHideDuration={4000}
               onRequestClose={this.handleRequestClose}
-                        />
+            />
           </div>
         </div>
       </div>
@@ -96,13 +96,13 @@ class SnackbarExampleAction extends React.Component {
             <RaisedButton
               onTouchTap={this.handleTouchTap}
               label="Add to my calendar"
-                        />
+            />
             <br />
             <TextField
               floatingLabelText="Auto Hide Duration in ms"
               value={this.state.autoHideDuration}
               onChange={this.handleChangeDuration}
-                        />
+            />
             <Snackbar
               open={this.state.open}
               message={this.state.message}
@@ -110,7 +110,7 @@ class SnackbarExampleAction extends React.Component {
               autoHideDuration={this.state.autoHideDuration}
               onActionTouchTap={this.handleActionTouchTap}
               onRequestClose={this.handleRequestClose}
-                        />
+            />
           </div>
         </div>
       </div>
@@ -138,6 +138,6 @@ const SnackbarSection = () => (
       </div>
     </section>
   </article>
-    );
+);
 
 module.exports = SnackbarSection;

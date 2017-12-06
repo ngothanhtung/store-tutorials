@@ -7,7 +7,7 @@ class ContactFormPage extends Component {
       <div>
         <ContactForm />
       </div>
-    )
+    );
   }
 }
 

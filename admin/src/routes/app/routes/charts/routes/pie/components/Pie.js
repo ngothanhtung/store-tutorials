@@ -132,8 +132,8 @@ pie4.options = {
       radius: [20, 110],
       center: ['25%', 200],
       roseType: 'radius',
-      width: '40%',       // for funnel
-      max: 40,            // for funnel
+      width: '40%', // for funnel
+      max: 40, // for funnel
       itemStyle: {
         normal: {
           label: {
@@ -169,9 +169,9 @@ pie4.options = {
       radius: [30, 110],
       center: ['75%', 200],
       roseType: 'area',
-      x: '50%',               // for funnel
-      max: 40,                // for funnel
-      sort: 'ascending',     // for funnel
+      x: '50%', // for funnel
+      max: 40, // for funnel
+      sort: 'ascending', // for funnel
       data: [
         {value: 10, name: 'rose1'},
         {value: 5, name: 'rose2'},

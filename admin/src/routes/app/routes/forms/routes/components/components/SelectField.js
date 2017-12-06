@@ -19,7 +19,7 @@ class SelectFieldExampleSimple extends React.Component {
               floatingLabelText="Frequency"
               value={this.state.value}
               onChange={this.handleChange}
-                        >
+            >
               <MenuItem value={1} primaryText="Never" />
               <MenuItem value={2} primaryText="Every Night" />
               <MenuItem value={3} primaryText="Weeknights" />
@@ -55,7 +55,7 @@ class SelectFieldExampleNullable extends React.Component {
               floatingLabelText="Ready?"
               value={this.state.value}
               onChange={this.handleChange}
-                        >
+            >
               <MenuItem value={null} primaryText="" />
               <MenuItem value={false} primaryText="No" />
               <MenuItem value primaryText="Yes" />
@@ -91,7 +91,7 @@ class DropDownMenuLongMenuExample extends React.Component {
               onChange={this.handleChange}
               value={this.state.value}
               maxHeight={200}
-                        >
+            >
               {longItems}
             </SelectField>
           </div>

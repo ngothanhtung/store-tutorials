@@ -13,7 +13,7 @@ const ConfirmEmail = () => (
           <p className="confirm-mail-icon"><span className="material-icons">mail_outline</span></p>
           <p className="text-center text-small no-margin">
             An email has been send to <strong>username@mail.com</strong>. Please check for an email from us and click on the included link to reset your password.
-         </p>
+          </p>
         </div>
 
       </div>
