@@ -12,7 +12,7 @@ class ContactPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: 'contact page'
+      redirect: false
     };
   }
 

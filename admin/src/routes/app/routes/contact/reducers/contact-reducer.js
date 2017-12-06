@@ -1,15 +1,24 @@
 const defaultState = {
   contacts: [],
+  contact: {name: {}},
   loading: false,
   errors: {}
 };
 
 export default (state = defaultState, action = {}) => {
   switch (action.type) {
+    case 'NEW_CONTACT': {
+      return {
+        ...state,
+        contact: { name: {} }
+      };
+    }
+
     case 'FETCH_CONTACTS_FULFILLED': {
       return {
         ...state,
         contacts: action.payload.data.data,
+        contact: { name: {}},
         loading: false,
         errors: {}
       };
