@@ -4,8 +4,9 @@ import QueueAnim from 'rc-queue-anim';
 import { hashHistory } from 'react-router';
 
 import { connect } from 'react-redux';
-import { fetchContacts } from '../actions/contact-actions';
+import { fetchContacts, newContact, saveContact } from '../actions/contact-actions';
 import ContactList from './ContactList';
+import AddContact from './AddContact';
 
 class Contact extends React.Component {
   constructor(props) {
@@ -26,6 +27,8 @@ class Contact extends React.Component {
           <div key="1">
             <h2>Contact Page</h2>
             <ContactList contacts={this.props.contacts} />
+            <hr />
+            <AddContact contact={this.props.contact} />
           </div>
         </QueueAnim>
       </section>
@@ -40,7 +43,5 @@ function mapStateToProps(state) {
     contacts: state.contactReducer.contacts
   };
 }
-
-// export default connect(mapStateToProps, {fetchContacts})(Page);
 
 module.exports = connect(mapStateToProps, { fetchContacts })(Contact);
