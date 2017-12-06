@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ContactList({ contacts }) {
   const list = () => contacts.map(contact => (
-    <li key={contact.id}>{contact.name.first} {contact.name.last} - {contact.email}</li>
+    <li key={contact.email}>{contact.name.first} {contact.name.last} - {contact.email}</li>
   ));
 
   return (

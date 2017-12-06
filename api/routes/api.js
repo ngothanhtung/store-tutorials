@@ -33,6 +33,17 @@ router.post('/register', function (req, res) {
     })
 });
 
+router.get('/contacts', function (req, res) {
+    db.findDocuments({}, "contacts", function (result) {
+        res.json({
+            success: true,
+            message: "OK",
+            token: "",
+            data: result
+        });
+    })
+});
+
 
 // ---------------------------------------------------------
 // route middleware to authenticate and check token

@@ -1,10 +1,13 @@
 import { contacts } from '../data';
+import { client } from './';
+
+const url = '/api/contacts';
 
 export function fetchContacts() {
   return (dispatch) => {
     dispatch({
       type: 'FETCH_CONTACTS',
-      payload: contacts
+      payload: client.get(url)
     });
   };
 }

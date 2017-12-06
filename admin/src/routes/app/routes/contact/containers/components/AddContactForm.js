@@ -1,9 +1,6 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
-import { newContact, saveContact } from '../actions/contact-actions';
 
 class AddContactForm extends React.Component {
   constructor(props) {

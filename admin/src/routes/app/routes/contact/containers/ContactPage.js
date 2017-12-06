@@ -5,10 +5,10 @@ import { hashHistory } from 'react-router';
 
 import { connect } from 'react-redux';
 import { fetchContacts, newContact, saveContact } from '../actions/contact-actions';
-import ContactList from './ContactList';
-import AddContact from './AddContact';
+import ContactList from './components/ContactList';
+import AddContactForm from './components/AddContactForm';
 
-class Contact extends React.Component {
+class ContactPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,14 +28,13 @@ class Contact extends React.Component {
             <h2>Contact Page</h2>
             <ContactList contacts={this.props.contacts} />
             <hr />
-            <AddContact contact={this.props.contact} />
+            <AddContactForm saveContact={this.props.saveContact} />
           </div>
         </QueueAnim>
       </section>
     );
   }
 }
-
 
 // Make contacts  array available in  props
 function mapStateToProps(state) {
@@ -44,4 +43,4 @@ function mapStateToProps(state) {
   };
 }
 
-module.exports = connect(mapStateToProps, { fetchContacts })(Contact);
+module.exports = connect(mapStateToProps, { fetchContacts, saveContact })(ContactPage);

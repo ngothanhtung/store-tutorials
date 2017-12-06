@@ -2,7 +2,7 @@ module.exports = {
   path: 'contact',
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
-      cb(null, require('./containers/Contact'));
+      cb(null, require('./containers/ContactPage'));
     });
   }
 };
