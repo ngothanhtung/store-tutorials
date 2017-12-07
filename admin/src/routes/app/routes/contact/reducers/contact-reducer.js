@@ -60,7 +60,7 @@ export default (state = defaultState, action = {}) => {
     case 'SAVE_CONTACT_FULFILLED': {
       return {
         ...state,
-        contacts: [...state.contacts, action.payload.data],
+        contacts: [...state.contacts, action.payload.data.data],
         errors: {},
         loading: false
       };
