@@ -1,10 +1,10 @@
 import React from 'react';
 import APPCONFIG from 'constants/Config';
 import QueueAnim from 'rc-queue-anim';
-import {hashHistory} from 'react-router';
+import { hashHistory } from 'react-router';
 
 import { connect } from 'react-redux';
-import {fetchContacts, newContact, saveContact} from '../actions/contact-actions';
+import { fetchContacts, newContact, saveContact } from '../actions/contact-actions';
 import ContactList from './components/ContactList';
 import AddContactForm from './components/AddContactForm';
 
@@ -22,6 +22,7 @@ class ContactPage extends React.Component {
 
   submit = (values) => {
     this.props.saveContact(values);
+    this.props.newContact();
   }
 
   render() {
@@ -42,7 +43,7 @@ class ContactPage extends React.Component {
 
 // Make contacts  array available in  props
 function mapStateToProps(state) {
-  return {contacts: state.contactReducer.contacts};
+  return { contacts: state.contactReducer.contacts };
 }
 
-module.exports = connect(mapStateToProps, {fetchContacts, saveContact})(ContactPage);
+module.exports = connect(mapStateToProps, { fetchContacts, newContact, saveContact })(ContactPage);

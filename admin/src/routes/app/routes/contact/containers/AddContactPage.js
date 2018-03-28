@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {Redirect} from 'react-router';
-import {SubmissionError} from 'redux-form';
-import {connect} from 'react-redux';
-import {newContact, saveContact} from '../actions/contact-actions';
+import React, { Component } from 'react';
+import { Redirect } from 'react-router';
+import { SubmissionError } from 'redux-form';
+import { connect } from 'react-redux';
+import { newContact, saveContact } from '../actions/contact-actions';
 import AddContactForm from './components/AddContactForm';
 
 class AddContactPage extends React.Component {
@@ -19,7 +19,9 @@ class AddContactPage extends React.Component {
 
   submit = (contact) => {
     return this
-      .props.saveContact(contact).then(response => this.setState({ redirect: true }))
+      .props.saveContact(contact).then(response => {
+        this.setState({ redirect: true })        
+      })
       .catch((err) => {
         throw new SubmissionError(this.props.errors);
       });
