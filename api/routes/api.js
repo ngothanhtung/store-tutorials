@@ -5,12 +5,29 @@ var authenticate = require('../helpers/AuthenticateHelper');
 
 var validator = require('validator');
 
+var slack = require('slack');
+const token = "xoxp-6826657525-6826354482-152425077456-227498ac7adf408918fd1d6ca614b9ea";
+
+
 // ---------------------------------------------------------
 // authentication (no middleware necessary since this isnt authenticated)
 // ---------------------------------------------------------
 router.post('/authenticate', function (req, res) {
     // check login here   
     authenticate.login(req, res);
+});
+
+router.post('/slack-postMessage', function(req, res) {
+    // logs {args:{hello:'world'}}
+    slack.api.test({hello:'world'}, console.log);
+    var result = slack.chat.postMessage(
+        {
+            token: token, 
+            channel: "C4KRH0ELW", 
+            text: "This is message fr0m my api"
+        }
+    );
+    res.send(result);
 });
 
 router.post('/register', function (req, res) {
@@ -110,5 +127,7 @@ router.get('/product/:id', function (req, res) {
 router.get('/check', function (req, res) {
     res.json(req.decoded);
 });
+
+
 
 module.exports = router;

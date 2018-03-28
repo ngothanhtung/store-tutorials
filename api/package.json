@@ -16,6 +16,7 @@
     "mongo": "^0.1.0",
     "morgan": "~1.9.0",
     "serve-favicon": "~2.4.5",
+    "slack": "^9.1.1",
     "validator": "^9.1.1"
   }
 }
