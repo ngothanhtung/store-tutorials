@@ -7,10 +7,13 @@ const defaultState = {
 
 export default (state = defaultState, action = {}) => {
   switch (action.type) {
+
     case 'NEW_CONTACT': {
       return {
         ...state,
-        contact: { name: {} }
+        contact: {},
+        loading: false,
+        errors: {}
       };
     }
 
