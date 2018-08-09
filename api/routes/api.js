@@ -17,13 +17,13 @@ router.post('/authenticate', function (req, res) {
     authenticate.login(req, res);
 });
 
-router.post('/slack-postMessage', function(req, res) {
+router.post('/slack-postMessage', function (req, res) {
     // logs {args:{hello:'world'}}
-    slack.api.test({hello:'world'}, console.log);
+    slack.api.test({ hello: 'world' }, console.log);
     var result = slack.chat.postMessage(
         {
-            token: token, 
-            channel: "C4KRH0ELW", 
+            token: token,
+            channel: "C4KRH0ELW",
             text: "This is message fr0m my api"
         }
     );
