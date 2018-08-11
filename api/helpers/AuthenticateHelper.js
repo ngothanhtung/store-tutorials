@@ -10,13 +10,11 @@ var db = require('../helpers/MongoDbHelper');
 // route middleware to authenticate and check token
 // ---------------------------------------------------------
 AuthenticateHelper.check = function (req, res, next) {
-
     // check header or url parameters or post parameters for token
     var token = req.body.token || req.params.token || req.headers['x-access-token'];
 
     // decode token
     if (token) {
-
         // verifies secret and checks exp
         jwt.verify(token, secrect, function (err, decoded) {
             if (err) {
@@ -29,14 +27,13 @@ AuthenticateHelper.check = function (req, res, next) {
         });
 
     } else {
-
         // if there is no token
         // return an error
         return res.status(403).send({
             success: false,
             message: 'No token provided.',
             token: "",
-            data: {}   
+            data: {}
         });
     }
 };
@@ -74,7 +71,7 @@ AuthenticateHelper.login = function (req, res) {
             });
         } else {
             res.json(
-                { 
+                {
                     success: false,
                     message: "Failed to authenticate token.",
                     token: "",

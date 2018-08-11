@@ -59,9 +59,9 @@ router.post('/contacts', function (req, res) {
 // ---------------------------------------------------------
 // route middleware to authenticate and check token
 // ---------------------------------------------------------
-router.use(function (req, res, next) {
-    authenticate.check(req, res, next);
-});
+// router.use(function (req, res, next) {
+//     authenticate.check(req, res, next);
+// });
 
 // ---------------------------------------------------------
 // authenticated routes

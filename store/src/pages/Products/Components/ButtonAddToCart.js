@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Button, Icon, Confirm} from "semantic-ui-react";
+import React, { Component } from 'react';
+import { Button, Icon, Confirm } from "semantic-ui-react";
 
 import createHistory from 'history/createBrowserHistory';
 const history = createHistory({
@@ -55,12 +55,10 @@ class ButtonAddToCart extends Component {
     }
 
     render() {
-        return(
+        return (
             <span>
-                <Button content='Add to cart' positive onClick={this.onAddToCart.bind(this, this.props.product)}>
-
-                </Button>
-                <Confirm
+                <Button onClick={this.onAddToCart.bind(this, this.props.product)}>Add to cart</Button>
+                {/* <Confirm
                     confirmButton='Check out'
                     cancelButton='Continue'
                     header='Shopping Cart'
@@ -68,7 +66,7 @@ class ButtonAddToCart extends Component {
                     open={this.state.open}
                     onCancel={this.handleCancel}
                     onConfirm={this.handleConfirm}
-                />
+                /> */}
             </span>
         );
     }
